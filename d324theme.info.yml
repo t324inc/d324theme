@@ -15,7 +15,7 @@ regions:
   header: Header
   content: Content
   sidebar_left: Sidebar Left
-  sidebar_left: Sidebar Right
+  sidebar_right: Sidebar Right
   page_top: Page top
   page_bottom: Page bottom
   above_footer: Above Footer
@@ -35,4 +35,3 @@ component-libraries:
   d324theme:
     paths:
       - ./src/components
-

@@ -1,0 +1,90 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+<div class="page">
+
+  {% embed '@d324theme/navbar/navbar.twig' with {
+    placement: 'sticky-top',
+    container: 'fixed',
+    color: 'light',
+    utility_classes: ['bg-light'],
+  } %}
+
+    {% block above_navbar %}
+      {% if page.above_navbar %}
+        {{ page.above_navbar }}
+      {% endif %}
+    {% endblock %}
+
+    {% block branding %}
+      {% if page.navbar_branding %}
+        {{ page.navbar_branding }}
+      {% endif %}
+    {% endblock %}
+
+    {% block left %}
+      {% if page.navbar_left %}
+        <div class="mr-auto">
+          {{ page.navbar_left }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block right %}
+      {% if page.navbar_right %}
+        {{ page.navbar_right }}
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+
+  <main class="pt-5 pb-5">
+    {% if page.header %}
+      <header class="page__header mb-3">
+        <div class="container">
+          {{ page.header }}
+        </div>
+      </header>
+    {% endif %}
+
+    {% if page.content %}
+      <div class="page__content">
+        <div class="container">
+          {% if page.sidebar_left %}
+            <div class="page__sidebar-left">
+              {{ page.sidebar_left }}
+            </div>
+          {% endif %}
+          {{ page.content }}
+          {% if page.sidebar_right %}
+            <div class="page__sidebar-right">
+              {{ page.sidebar_right }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </main>
+
+  {% if page.above_footer %}
+    <div class="page__above-footer">
+      <div class="container">
+        <div class="d-flex justify-content-md-between align-items-md-center">
+          {{ page.above_footer }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if page.footer %}
+    <footer class="page__footer">
+      <div class="container">
+        <div class="d-flex justify-content-md-between align-items-md-center">
+          {{ page.footer }}
+        </div>
+      </div>
+    </footer>
+  {% endif %}
+</div>

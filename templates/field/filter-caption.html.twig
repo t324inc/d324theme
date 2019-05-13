@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Template for a Figure.
+ */
+#}
+{% include '@d324theme/figure/figure.twig' with {
+  image: node,
+  caption: caption,
+  utility_classes: classes|split(' '),
+} %}
