@@ -1,6 +1,6 @@
 {
   "name": "d324theme",
-  "description": "A theme based on Radix.",
+  "description": "A D324 theme based on Radix by T324.",
   "private": true,
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete",
@@ -14,7 +14,7 @@
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.0.1",
     "cross-env": "^5.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "laravel-mix": "^4.0.15",
     "popper.js": "^1.14.7",
     "resolve-url-loader": "2.3.1",
