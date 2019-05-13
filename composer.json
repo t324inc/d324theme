@@ -1,0 +1,23 @@
+{
+  "name": "t324/d324theme",
+  "description": "A D324 theme based on Radix by T324.",
+  "type": "drupal-theme",
+  "homepage": "https://github.com/t324inc/d324theme",
+  "authors": [
+    {
+      "name": "T324",
+      "homepage": "https://www.t324.com",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/components": "^1.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-8.x-7.x": "8.7.x-dev"
+    }
+  }
+}
