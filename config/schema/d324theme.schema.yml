@@ -1,0 +1,5 @@
+# Schema for the configuration files of the d324theme theme.
+
+d324theme.settings:
+  type: theme_settings
+  label: 'd324theme settings'

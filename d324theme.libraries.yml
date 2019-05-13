@@ -1,0 +1,10 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/d324theme.style.css: {}
+  js:
+    assets/js/d324theme.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
