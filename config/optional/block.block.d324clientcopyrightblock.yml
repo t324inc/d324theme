@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - d324_copyright_module
+  theme:
+    - d324theme
+id: d324clientcopyrightblock
+theme: d324theme
+region: footer
+weight: 0
+provider: null
+plugin: d324_client_copyright_block
+settings:
+  id: d324_client_copyright_block
+  label: 'D324 Client Copyright block'
+  provider: d324_copyright_block
+  label_display: '0'
+  d324_copyright_block_client_name: 'Client Company, Inc.'
+visibility: {  }
