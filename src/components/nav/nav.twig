@@ -37,7 +37,7 @@
           item.is_expanded and item.below ? 'dropdown'
         ] %}
         {% set nav_link_classes = [
-          item.url.options.attributes.class,
+          item.url.options.attributes.class | join(' '),
           'nav-link',
         ] %}
         <li class="{{ nav_item_classes|join(' ') }}">
