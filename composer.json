@@ -1,7 +1,7 @@
 {
   "name": "t324inc/d324theme",
   "description": "A base theme for D324 based on Radix. It has Bootstrap, Sass, BrowserSync and Font Awesome built-in.",
-  "type": "d324-drupal-theme",
+  "type": "drupal-theme",
   "homepage": "https://github.com/t324inc/d324theme",
   "authors": [
     {
