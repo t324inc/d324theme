@@ -5,6 +5,7 @@ core: 8.x
 version: 8.x-7.x
 engine: twig
 type: theme
+package: D324
 base theme: radix
 logo: assets/images/logo/logo-text.svg
 
