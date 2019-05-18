@@ -1,11 +1,12 @@
 name: d324theme
 description: A D324 theme based on Radix by T324
-screenshot: screenshot.png
+screenshot: assets/images/logo/screenshot-588w.png
 core: 8.x
 version: 8.x-7.x
 engine: twig
 type: theme
 base theme: radix
+logo: assets/images/logo/logo-text.svg
 
 regions:
   above_navbar: Above Navbar
