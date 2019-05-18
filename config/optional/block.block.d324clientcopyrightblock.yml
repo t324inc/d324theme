@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - d324_copyright_module
+    - d324_copyright_block
   theme:
     - d324theme
 id: d324clientcopyrightblock
