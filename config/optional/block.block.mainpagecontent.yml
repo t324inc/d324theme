@@ -1,0 +1,20 @@
+uuid: 73636356-7e74-4d66-a661-3e37aefd8eab
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - d324theme
+id: mainpagecontent
+theme: d324theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: visible
+visibility: {  }
