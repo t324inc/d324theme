@@ -35,7 +35,9 @@
 
     {% block right %}
       {% if page.navbar_right %}
-        {{ page.navbar_right }}
+        <div class="ml-auto">
+          {{ page.navbar_right }}
+        </div>
       {% endif %}
     {% endblock %}
   {% endembed %}
