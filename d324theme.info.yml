@@ -1,4 +1,5 @@
-name: d324theme
+name: D324 Theme
+project: d324theme
 description: A D324 theme based on Radix by T324
 screenshot: assets/images/logo/screenshot-588w.png
 core: 8.x
