@@ -24,13 +24,15 @@
 {% endif %}
 
 {% if content %}
-  <{{ html_tag }} {{ url ? 'href=' ~ url }} class="{{ classes|join(' ') }}">
+  <h3>
+    <{{ html_tag }} {{ url ? 'href=' ~ url }} class="{{ classes|join(' ') }}">
 
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
 
-  </{{ html_tag }}>
+    </{{ html_tag }}>
+  </h3>
 {% endif %}
 
 

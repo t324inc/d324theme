@@ -1,0 +1,58 @@
+.has-drop-cap:not(:focus):first-letter {
+  font-family: $font-family-serif;
+}
+
+// Set Gutenberg color classes
+@each $slug, $color in $theme-colors {
+  .has-#{$slug}-color { color: $color }
+  .has-#{$slug}-background-color { background: $color }
+}
+
+// Set Gutenberg font sizes
+.has-small-font-size { font-size: $font-size-sm }
+.has-normal-font-size { font-size: $font-size-base }
+.has-medium-font-size { font-size: $font-size-base * 1.25 }
+.has-large-font-size { font-size: $font-size-base * 2 }
+.has-huge-font-size { font-size: $font-size-base * 3 }
+
+// Gutenberg Blocks
+
+.wp-block-media-text {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-gallery {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-pullquote {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+  &.is-style-solid-color {
+    blockquote cite {
+      color: inherit;
+    }
+  }
+}
+
+.wp-block-cover {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-group {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-embed {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-separator {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}

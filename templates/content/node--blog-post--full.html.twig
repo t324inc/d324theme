@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Template for a forum node in full display mode.
+ */
+#}
+{% extends 'node.html.twig' %}
+{% block content %}
+
+  {% if display_submitted or content.addtoany %}
+    <footer class="row mb-4 justify-content-md-between align-items-center">
+      {% if display_submitted %}
+        <div{{ author_attributes.addClass('lead', 'col-md-auto') }}>
+          {% trans %}Posted by {{ author_name }}{% endtrans %}
+          <small class="text-muted">
+            {% trans %}on {{ date }}{% endtrans %}
+            {{ metadata }}
+          </small>
+        </div>
+      {% endif %}
+      {% if content.addtoany %}
+        <div class="col-md-auto">
+          {{ content.addtoany }}
+        </div>
+      {% endif %}
+    </footer>
+  {% endif %}
+
+  {{ content|without('addtoany') }}
+
+  <hr/>
+
+  {{ content.comment_forum }}
+
+{% endblock %}

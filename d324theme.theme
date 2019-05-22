@@ -9,3 +9,33 @@ $includes_path = dirname(__FILE__) . '/includes/*.inc';
 foreach (glob($includes_path) as $filename) {
   require_once dirname(__FILE__) . '/includes/' . basename($filename);
 }
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function d324theme_library_info_alter(&$libraries, $extension) {
+  if ($extension === 'gutenberg') {
+
+    $js_files_edit = [];
+    $css_files_edit = [dirname(__FILE__) . '/assets/css/' . basename('d324theme.style.css')];
+    $css_files_view = [];
+
+    foreach ($js_files_edit as $file) {
+      $libraries['blocks-edit']['js'][$file] = [];
+    }
+
+    foreach ($css_files_edit as $file) {
+      $libraries['blocks-edit']['css']['base'][$file] = [];
+    }
+
+    foreach ($css_files_view as $file) {
+      $libraries['blocks-view']['css']['base'][$file] = [];
+    }
+  }
+}
+
+function hook_gutenberg_blocks_alter(array &$js_files_edit, array &$css_files_edit, array &$css_files_view) {
+  $js_files_edit[] = '/path/to/js/files';
+  $css_files_edit[] = '/path/to/css/files';
+  $css_files_view[] = '/path/to/css/files';
+}

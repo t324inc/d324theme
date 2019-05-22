@@ -1,5 +1,5 @@
 style:
-  version: VERSION
+  version: 1.0
   css:
     theme:
       assets/css/d324theme.style.css: {}
@@ -8,3 +8,8 @@ style:
   dependencies:
     - core/jquery
     - core/drupal
+gutenbergedit:
+  version: 1.0
+  css:
+    theme:
+      assets/css/d324theme.gutenberg.css: {}

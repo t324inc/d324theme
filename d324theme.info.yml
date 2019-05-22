@@ -16,6 +16,7 @@ regions:
   navbar_left:  Navbar left
   navbar_right: Navbar right
   header: Header
+  titlearea: Title Area
   content: Content
   sidebar_left: Sidebar Left
   sidebar_right: Sidebar Right
