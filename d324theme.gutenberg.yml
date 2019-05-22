@@ -1,0 +1,56 @@
+# Don't update this file unless you want Gutenberg colors to become separated from D324 theme variables.  Instead,
+# update the file d324theme.settings.yml and run "npm run dev" or "npm run production".
+
+theme-support:
+  colors:
+    - slug: body-color
+      name: Theme Body Text Color
+      color: '#333333'
+    - slug: body-bg
+      name: Theme Body Background Color
+      color: '#FCFCFC'
+    - slug: link
+      name: Theme Link Color
+      color: '#005696'
+    - slug: heading
+      name: Theme Heading Color
+      color: '#555555'
+    - slug: primary
+      name: Theme Primary Color
+      color: '#11689B'
+    - slug: secondary
+      name: Theme Secondary Color
+      color: '#FEC114'
+    - slug: accent
+      name: Theme Accent Color
+      color: '#AEBED7'
+    - slug: alternate-1
+      name: Theme Alternate Color 1
+      color: '#175088'
+    - slug: alternate-2
+      name: Theme Alternate Color 2
+      color: '#F89406'
+    - slug: danger
+      name: Theme Danger Color
+      color: '#DC3545'
+    - slug: warning
+      name: Theme Warning Color
+      color: '#FEC114'
+    - slug: info
+      name: Theme Info Color
+      color: '#17A2B8'
+    - slug: success
+      name: Theme Success Color
+      color: '#28A745'
+    - slug: dark
+      name: Theme Dark Color
+      color: '#111111'
+    - slug: light
+      name: Theme Light Color
+      color: '#F0F0F0'
+    - slug: black
+      name: Theme Black Color
+      color: '#000000'
+    - slug: white
+      name: Theme White Color
+      color: '#FFFFFF'
