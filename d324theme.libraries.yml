@@ -26,15 +26,15 @@ gutenberg-edit:
   version: 1.0
   css:
     theme:
-      assets/gutenberg/d324theme.gutenberg.edit.css
+      assets/gutenberg/d324theme.gutenberg.edit.css: {}
 
 gutenberg-view:
   version: 1.0
   css:
     theme:
-      assets/gutenberg/d324theme.gutenberg.view.css
+      assets/gutenberg/d324theme.gutenberg.view.css: {}
 
 gutenberg-js:
   version: 1.0
   js:
-    assets/gutenberg/d324theme.gutenberg.js
+    assets/gutenberg/d324theme.gutenberg.js: {}

@@ -13,15 +13,15 @@ gutenberg-edit:
   version: 1.0
   css:
     theme:
-      assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.edit.css
+      assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.edit.css: {}
 
 gutenberg-view:
   version: 1.0
   css:
     theme:
-      assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.view.css
+      assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.view.css: {}
 
 gutenberg-js:
   version: 1.0
   js:
-    assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.js
+    assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.js: {}
