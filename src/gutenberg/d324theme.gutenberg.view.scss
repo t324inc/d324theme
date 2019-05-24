@@ -1,0 +1,26 @@
+// REQUIRED
+// -----------------------------------------------------------------------------
+@import "~bootstrap/scss/functions";
+@import "../sass/base/d324theme_variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+// OPTIONAL
+// -----------------------------------------------------------------------------
+@import "../sass/base/mixins";
+@import "../sass/base/functions";
+@import "../sass/base/helpers";
+@import "../sass/base/elements";
+@import "~bootstrap/scss/type";
+
+// CUSTOM
+// -----------------------------------------------------------------------------
+@import "../sass/block/block";
+@import "../sass/content/node.page";
+@import "../sass/content/node.article";
+
+// GUTENBERG
+// -----------------------------------------------------------------------------
+@import "includes/gutenberg_color_classes";
+@import "includes/gutenberg_font_classes";
+@import "includes/gutenberg_block_classes";

@@ -1,15 +1,40 @@
+bootstrap:
+  version: 1.0
+  js:
+    node_modules/popper.js/dist/umd/popper.min.js: {}
+    node_modules/bootstrap/dist/js/bootstrap.min.js: {}
+  css:
+    theme:
+      assets/css/d324theme.bootstrap.css: {}
+  dependencies:
+    - core/jquery
+
 style:
   version: 1.0
   css:
     theme:
       assets/css/d324theme.style.css: {}
   js:
+    node_modules/popper.js/dist/umd/popper.min.js: {}
+    node_modules/bootstrap/dist/js/bootstrap.min.js: {}
     assets/js/d324theme.script.js: {}
   dependencies:
     - core/jquery
     - core/drupal
-gutenbergedit:
+
+gutenberg-edit:
   version: 1.0
   css:
     theme:
-      assets/css/d324theme.gutenberg.css: {}
+      assets/gutenberg/d324theme.gutenberg.edit.css
+
+gutenberg-view:
+  version: 1.0
+  css:
+    theme:
+      assets/gutenberg/d324theme.gutenberg.view.css
+
+gutenberg-js:
+  version: 1.0
+  js:
+    assets/gutenberg/d324theme.gutenberg.js

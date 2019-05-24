@@ -1,6 +1,6 @@
 {
   "name": "d324theme",
-  "description": "A D324 theme based on Radix by T324.",
+  "description": "A D324 theme by T324.",
   "private": true,
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete",
@@ -14,6 +14,7 @@
     "browser-sync": "^2.26.5",
     "browser-sync-webpack-plugin": "^2.0.1",
     "cross-env": "^5.1",
+    "extra-watch-webpack-plugin": "^1.0.3",
     "jquery": "^3.4.0",
     "js-yaml": "^3.13.1",
     "laravel-mix": "^4.0.15",
@@ -23,8 +24,5 @@
     "sass": "^1.20.1",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
-  },
-  "dependencies": {
-    "extra-watch-webpack-plugin": "^1.0.3"
   }
 }

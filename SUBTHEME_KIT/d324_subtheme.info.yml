@@ -1,0 +1,50 @@
+name: D324_SUBTHEME_NAME
+description: D324_SUBTHEME_DESCRIPTION
+core: 8.x
+version: 8.x-7.x
+engine: twig
+type: theme
+package: D324
+base theme: d324theme
+logo: logo.svg
+screenshot: screenshot.png
+
+regions:
+  above_navbar: Above Navbar
+  navbar_branding: Navbar branding
+  navbar_left:  Navbar left
+  navbar_right: Navbar right
+  header: Header
+  titlearea: Title Area
+  content: Content
+  sidebar_left: Sidebar Left
+  sidebar_right: Sidebar Right
+  page_top: Page top
+  page_bottom: Page bottom
+  above_footer: Above Footer
+  footer: Footer
+
+libraries:
+  - D324_SUBTHEME_MACHINE_NAME/style
+
+libraries-override:
+  d324theme/bootstrap: false
+  d324theme/gutenberg-edit: false
+  d324theme/gutenberg-view: false
+  d324theme/gutenberg-js: false
+
+libraries-extend:
+  gutenberg/blocks-edit:
+    - D324_SUBTHEME_MACHINE_NAME/gutenberg-edit
+    - D324_SUBTHEME_MACHINE_NAME/gutenberg-js
+  gutenberg/blocks-view:
+    - D324_SUBTHEME_MACHINE_NAME/gutenberg-view
+    - D324_SUBTHEME_MACHINE_NAME/gutenberg-js
+
+ckeditor_stylesheets:
+  - assets/css/D324_SUBTHEME_MACHINE_NAME.style.css
+
+component-libraries:
+  D324_SUBTHEME_MACHINE_NAME:
+    paths:
+      - ./src/components

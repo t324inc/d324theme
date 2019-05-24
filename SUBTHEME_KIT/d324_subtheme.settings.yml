@@ -1,0 +1,156 @@
+# All styling settings for your D324 theme should be entered here
+
+# D324_SUBTHEME_NAME THEME COLORS
+# Set theme colors here.  They will automatically be injected into SASS as variables during "npm run dev" or equivalent
+# and will be added to other related files such as the Gutenberg theme support yaml file
+d324colors:
+  body-color:
+    name: Theme Body Text Color
+    value: "#333333"
+  body-bg:
+    name: Theme Body Background Color
+    value: "#FCFCFC"
+  link:
+    name: Theme Link Color
+    value: "#005696"
+  heading:
+    name: Theme Heading Color
+    value: "#555555"
+  primary:
+    name: Theme Primary Color
+    value: "#11689B"
+  secondary:
+    name: Theme Secondary Color
+    value: "#FEC114"
+  accent:
+    name: Theme Accent Color
+    value: "#AEBED7"
+  alternate-1:
+    name: Theme Alternate Color 1
+    value: "#175088"
+  alternate-2:
+    name: Theme Alternate Color 2
+    value: "#F89406"
+  danger:
+    name: Theme Danger Color
+    value: "#DC3545"
+  warning:
+    name: Theme Warning Color
+    value: "#FEC114"
+  info:
+    name: Theme Info Color
+    value: "#17A2B8"
+  success:
+    name: Theme Success Color
+    value: "#28A745"
+  dark:
+    name: Theme Dark Color
+    value: "#111111"
+  light:
+    name: Theme Light Color
+    value: "#F0F0F0"
+  black:
+    name: Theme Black Color
+    value: "#000000"
+  white:
+    name: Theme White Color
+    value: "#FFFFFF"
+
+# D324_SUBTHEME_NAME THEME FONT FAMILIES
+# Set theme font family settings here.  They will automatically be injected into SASS as variables during "npm run dev"
+# or equivalent and will be added to other related files such as the Gutenberg theme support yaml file
+d324fontfamilies:
+  font-family-sans-serif:
+    name: Theme Sans Serif Font Family Stack
+    value: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif
+  font-family-serif:
+    name: Theme Serif Font Family Stack
+    value: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif
+  font-family-monospace:
+    name: Theme Monospace Font Family Stack
+    value: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+  font-family-base:
+    name: Theme Body Font Family Stack
+    value: $font-family-sans-serif
+  headings-font-family:
+    name: Theme Heading Font Family Stack
+    value: $font-family-serif
+
+# D324_SUBTHEME_NAME GUTENBERG FONT SIZES
+# Set Gutenberg editor font size settings here.  They will automatically be injected into SASS as variables during
+# "npm run dev" or equivalent and will be added to other related files such as the Gutenberg theme support yaml file
+# Note: Not yet implemented
+d324gutenbergfontsizes:
+  guten-small:
+    slug: small
+    name: Small
+    value: 12
+  guten-normal:
+    slug: normal
+    name: Normal
+    value: 16
+  guten-medium:
+    slug: medium
+    name: Medium
+    value: 20
+  guten-large:
+    slug: large
+    name: Large
+    value: 32
+  guten-huge:
+    slug: huge
+    name: Huge
+    value: 48
+
+# D324_SUBTHEME_NAME THEME LAYOUT
+# Set theme layout settings here to be included in variables.scss for the compiler
+d324layout:
+  grid-gutter-width:
+    name: Theme Grid Gutter Width
+    value: 1.875rem
+
+# D324_SUBTHEME_NAME BOOTSTRAP OPTIONS
+# Set Bootstrap SASS options to be included in _variables.scss for the compiler
+d324bootstrapoptions:
+  enable-caret:
+    name: Theme Bootstrap Option - Enable Caret
+    value: true
+  enable-rounded:
+    name: Theme Bootstrap Option - Enable Rounded
+    value: true
+  enable-shadows:
+    name: Theme Bootstrap Option - Enable Shadows
+    value: false
+  enable-gradients:
+    name: Theme Bootstrap Option - Enable Gradients
+    value: false
+  enable-transitions:
+    name: Theme Bootstrap Option - Enable Transitions
+    value: true
+  enable-prefers-reduced-motion-media-query:
+    name: Theme Bootstrap Option - Enable Reduced Motion
+    value: true
+  enable-grid-classes:
+    name: Theme Bootstrap Option - Enable Grid Classes
+    value: true
+  enable-pointer-cursor-for-buttons:
+    name: Theme Bootstrap Option - Enable Pointer Cursor
+    value: true
+  enable-print-styles:
+    name: Theme Bootstrap Option - Enable Print Styles
+    value: true
+  enable-responsive-font-sizes:
+    name: Theme Bootstrap Option - Enable Responsive Font Sizes
+    value: false
+  enable-validation-icons:
+    name: Theme Bootstrap Option - Enable Validation Icons
+    value: true
+  enable-deprecation-messages:
+    name: Theme Bootstrap Option - Enable Deprecation Messages
+    value: true
+
+# D324_SUBTHEME_NAME THEME UTILITY OPTIONS
+d324utilityoptions:
+  browsersync-proxy-url:
+    name: URL Browsersync will redirect to when loaded in watch mode
+    value: "http://d324.local"

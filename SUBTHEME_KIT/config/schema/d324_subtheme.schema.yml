@@ -1,0 +1,5 @@
+# Schema for the configuration files of the D324_SUBTHEME_NAME theme.
+
+D324_SUBTHEME_MACHINE_NAME.settings:
+  type: theme_settings
+  label: 'D324_SUBTHEME_MACHINE_NAME settings'

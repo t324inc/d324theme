@@ -8,11 +8,17 @@
  |
  */
 
-const proxy = 'http://d324.local';
 const fs = require('fs');
 const yaml = require('js-yaml');
 const mix = require('laravel-mix');
 const ExtraWatchWebpackPlugin = require( 'extra-watch-webpack-plugin');
+
+// Read in YAML file containing D324 theme settings
+const confYaml = yaml.safeLoad(fs.readFileSync('./d324theme.settings.yml', 'utf8'));
+
+const utilitySettings = confYaml['d324utilityoptions'];
+
+const proxy = utilitySettings['browsersync-proxy-url'].value;
 
 /*
  |--------------------------------------------------------------------------
@@ -20,15 +26,17 @@ const ExtraWatchWebpackPlugin = require( 'extra-watch-webpack-plugin');
  |--------------------------------------------------------------------------
  */
 
-// Read in YAML file containing D324 theme settings
-const confYaml = yaml.safeLoad(fs.readFileSync('./d324theme.settings.yml', 'utf8'));
+
 
 // Create SASS vars to inject into SCSS
 const sassInjection = prepSassVars(confYaml);
+
 const sassMsg = "// DON'T UPDATE THIS FILE\n"
-  + "// Instead, update the file d324theme.settings.yml and run "
-  + "\"npm run dev\" or \"npm run production\".\n\n";
-fs.writeFileSync('src/sass/base/_d324_variables.scss',
+  + "// Instead, update the file d324theme.settings.yml and run \"npm run dev\" or \"npm run production\"\n"
+  + "// This file is automatically regenerated each time \"npm run dev\" or equivalent build process is executed, so \n"
+  + "// DO NOT CHANGE THESE VARIABLES HERE... They'll be overwritten later.\n"
+  + "// Change them inside of d324theme.settings.yml \"npm run dev\" or \"npm run production\".\n\n";
+fs.writeFileSync('src/sass/base/_d324theme_settings.scss',
   sassMsg + sassInjection);
 
 // Create Gutenberg vars for theme support
@@ -79,8 +87,10 @@ mix.browserSync({
  |--------------------------------------------------------------------------
  */
 
-mix.sass('src/sass/d324theme.style.scss', 'css')
-  .sass('src/sass/d324theme.gutenberg.scss', 'css');
+mix.sass('src/sass/d324theme.bootstrap.scss', 'css')
+  .sass('src/sass/d324theme.style.scss', 'css')
+  .sass('src/sass/d324theme.gutenberg.view.scss', 'css')
+  .sass('src/sass/d324theme.gutenberg.edit.scss', 'css');
 
 /*
  |--------------------------------------------------------------------------

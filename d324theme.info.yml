@@ -1,14 +1,14 @@
 name: D324 Theme
 project: d324theme
 description: A D324 theme based on Radix by T324
-screenshot: assets/images/logo/screenshot-588w.png
+screenshot: screenshot.png
 core: 8.x
 version: 8.x-7.x
 engine: twig
 type: theme
 package: D324
-base theme: radix
-logo: assets/images/logo/logo-text.svg
+base theme: seven
+logo: logo.svg
 
 regions:
   above_navbar: Above Navbar
@@ -25,12 +25,25 @@ regions:
   above_footer: Above Footer
   footer: Footer
 
+stylesheets-remove:
+  - system.theme.css
+  - system.menus.css
+  - system.admin.css
+
 libraries:
-  - radix/style
+  - d324theme/bootstrap
   - d324theme/style
 
 libraries-override:
-  radix/bootstrap: false
+  seven/global-styling: false
+
+libraries-extend:
+  gutenberg/blocks-edit:
+    - d324theme/gutenberg-edit
+    - d324theme/gutenberg-js
+  gutenberg/blocks-view:
+    - d324theme/gutenberg-view
+    - d324theme/gutenberg-js
 
 ckeditor_stylesheets:
   - assets/css/d324theme.style.css

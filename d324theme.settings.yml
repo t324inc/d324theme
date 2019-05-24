@@ -148,3 +148,9 @@ d324bootstrapoptions:
   enable-deprecation-messages:
     name: Theme Bootstrap Option - Enable Deprecation Messages
     value: true
+
+# D324 THEME UTILITY OPTIONS
+d324utilityoptions:
+  browsersync-proxy-url:
+    name: URL Browsersync will redirect to when loaded in watch mode
+    value: "http://d324.local"

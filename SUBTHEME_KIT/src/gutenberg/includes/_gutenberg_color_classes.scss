@@ -1,0 +1,6 @@
+// Set Gutenberg color classes
+
+@each $slug, $color in $theme-colors {
+  .has-#{$slug}-color { color: $color }
+  .has-#{$slug}-background-color { background: $color }
+}

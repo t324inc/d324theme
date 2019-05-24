@@ -1,0 +1,27 @@
+style:
+  version: 1.0
+  css:
+    theme:
+      assets/css/D324_SUBTHEME_MACHINE_NAME.style.css: {}
+  js:
+    assets/js/D324_SUBTHEME_MACHINE_NAME.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+gutenberg-edit:
+  version: 1.0
+  css:
+    theme:
+      assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.edit.css
+
+gutenberg-view:
+  version: 1.0
+  css:
+    theme:
+      assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.view.css
+
+gutenberg-js:
+  version: 1.0
+  js:
+    assets/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.js

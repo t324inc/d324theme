@@ -1,0 +1,11 @@
+// Functions
+
+@function getRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@function getGutenRem($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}

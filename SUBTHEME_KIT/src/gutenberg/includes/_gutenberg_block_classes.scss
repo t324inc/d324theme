@@ -1,0 +1,41 @@
+// Set Gutenberg block classes
+
+.wp-block-media-text {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-gallery {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-pullquote {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+  &.is-style-solid-color {
+    blockquote cite {
+      color: inherit;
+    }
+  }
+}
+
+.wp-block-cover {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-group {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-embed {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.wp-block-separator {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
