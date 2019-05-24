@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/sass/d324theme.style.scss"],"names":[],"mappings":"AAGA;EACE","file":"css/d324theme.style.css","sourcesContent":["// Styles for blocks provided by core and contrib modules\n\n// AddToAny widget\n.a2a_kit a {\n  display: inline-block;\n}\n"],"sourceRoot":""}

@@ -89,8 +89,8 @@ mix.browserSync({
 
 mix.sass('src/sass/d324theme.bootstrap.scss', 'css')
   .sass('src/sass/d324theme.style.scss', 'css')
-  .sass('src/sass/d324theme.gutenberg.view.scss', 'css')
-  .sass('src/sass/d324theme.gutenberg.edit.scss', 'css');
+  .sass('src/gutenberg/d324theme.gutenberg.view.scss', 'css')
+  .sass('src/gutenberg/d324theme.gutenberg.edit.scss', 'css');
 
 /*
  |--------------------------------------------------------------------------

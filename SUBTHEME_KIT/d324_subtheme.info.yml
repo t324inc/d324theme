@@ -1,5 +1,5 @@
 name: D324_SUBTHEME_NAME
-description: D324_SUBTHEME_DESCRIPTION
+description: A D324Theme subtheme by T324
 core: 8.x
 version: 8.x-7.x
 engine: twig
