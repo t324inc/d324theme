@@ -1,0 +1,55 @@
+.jumbotron {
+  position: relative;
+  min-height: 25rem;
+  text-align: center;
+  background-color: $dark;
+
+  .card-img {
+    position: absolute;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: .85;
+    transition: $transition-base;
+  }
+
+  &:hover .card-img {
+    opacity: .75;
+  }
+
+  .card-img-overlay {
+    position: relative;
+  }
+
+  .paragraph--type--jumbotron h1.text-white {
+    font-size: 3rem;
+    padding: 0 2rem;
+  }
+
+}
+
+.calls-to-action a, .feature-box-ctas a {
+  margin: 2rem 0.75rem;
+  padding: 1.25rem 3rem;
+  font-size: 1rem;
+  border: none;
+
+  &:first-child {
+    margin-left: 0;
+  }
+  
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.feature-box .feature-box-ctas {
+  margin-bottom: -5.5rem;
+  margin-top: 0rem;
+  a {
+    font-size: 1rem;
+  }
+}

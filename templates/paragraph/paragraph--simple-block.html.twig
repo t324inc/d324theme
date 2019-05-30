@@ -1,0 +1,21 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  'paragraph--id--' ~ paragraph.id(),
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% include '@d324theme/simple_block/simple_block.twig' with {
+      heading: paragraph.field_heading.value,
+      sub_heading: paragraph.field_sub_heading.value,
+      pre_heading: paragraph.field_pre_heading.value,
+      media: content.field_media,
+      text_content: content.field_text_content,
+      buttons: paragraph.field_call_to_action_buttons
+    } %}
+  </div>
+{% endblock paragraph %}

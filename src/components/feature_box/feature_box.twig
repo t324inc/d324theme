@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Template for a feature_box component.
+ *
+ * Available config:
+ * - main_url : URL string
+ * - feature_image: image
+ * - heading: string
+ * - text: content text
+ * - calls_to_action: array of links
+ * - direction: left or right
+ * - attributes: Attributes array.
+ */
+#}
+{% set css_classes = [
+  'feature-box',
+  'container'
+] %}
+{% set flex_direction = direction == 'left' ? 'flex-row-reverse' : 'flex-row' %}
+<div{{ attributes.addClass(css_classes) }}>
+  <div class="row no-gutters {{ flex_direction }}">
+    <div class="col-md-8 py-md-6 d-flex flex-column justify-content-center">
+      <div class="bg-white shadow d-flex flex-grow-0 flex-column p-5">
+        <h3>{{ heading }}</h3>
+        <div class="feature-text">
+          {{ text }}
+        </div>
+        {% set button_direction = direction == 'left' ? 'text-align-right' : 'text-align-left' %}
+        <div class="feature-box-ctas {{ button_direction }}">
+          {%- for item in calls_to_action -%}
+            {% set link_attributes = create_attribute() %}
+            {% set link_attributes = link_attributes.addClass('btn btn-primary') %}
+            {{ link(item.title, item.uri, link_attributes) }}
+          {%- endfor -%}
+          {% if main_url %}
+            <a href="{{ main_url }}" class="btn btn-primary">more info</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 shadow">
+      {% if main_url %}<a href="{{ main_url }}">{% endif %}
+      {{ feature_image }}
+      {% if main_url %}</a>{% endif %}
+    </div>
+  </div>
+</div>

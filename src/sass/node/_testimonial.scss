@@ -1,0 +1,94 @@
+.testimonial-card {
+  background: $white;
+  padding: 2rem 2.5rem;
+  margin: 5rem 10rem;
+
+  h6 {
+    line-height: 1.875;
+  }
+}
+
+.slick--view--testimonial-slider .slick-prev {
+  width: 0;
+  height: 0;
+  border-top: 12.5px solid transparent;
+  border-bottom: 12.5px solid transparent;
+  border-right: 12.5px solid $dark;
+  border-radius: 0;
+  background: none;
+  margin-left: 4rem;
+  transition: $transition-base;
+  transition-duration: .25s;
+}
+
+.slick--view--testimonial-slider .slick-prev:hover {
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right: 18px solid $dark;
+  margin-left: calc(4rem - 5.5px);
+}
+
+.slick--view--testimonial-slider .slick-next {
+  width: 0;
+  height: 0;
+  border-top: 12.5px solid transparent;
+  border-bottom: 12.5px solid transparent;
+  border-left: 12.5px solid $dark;
+  border-radius: 0;
+  background: none;
+  margin-right: 4rem;
+  transition: $transition-base;
+  transition-duration: .25s;
+}
+
+.slick--view--testimonial-slider .slick-next:hover {
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 18px solid $dark;
+  margin-right: calc(4rem - 5.5px);
+}
+
+.slick--view--testimonial-slider .slick-prev::before, .slick--view--testimonial-slider .slick-next::before {
+  content: none;
+}
+
+.testimonial .testimonial__attribution-name {
+  margin: .25rem;
+}
+
+.testimonial .testimonial__attribution-title {
+  margin: 0;
+  line-height: 1.15;
+}
+
+.grid .testimonial-card {
+  margin: 0;
+  height: 100%;
+}
+
+.view-testimonial-index .grid .col article {
+  height: 100%;
+}
+
+.view-testimonial-index .grid .col {
+  margin-bottom: 2rem;
+}
+
+.slick--view--testimonial-slider .slick-list {
+
+  &::before {
+    content: url('/themes/d324/neal_grace/assets/images/quote-left.svg');
+    position: absolute;
+    left: 6rem;
+    top: 2rem;
+    z-index: -1;
+  }
+
+  &::after {
+    content: url('/themes/d324/neal_grace/assets/images/quote-right.svg');
+    position: absolute;
+    right: 6rem;
+    bottom: 2rem;
+    z-index: -1;
+  }
+}

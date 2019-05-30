@@ -1,0 +1,21 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  'paragraph--id--' ~ paragraph.id(),
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% include '@d324theme/stripe_box/stripe_box.twig' with {
+      background_image: background,
+      background_color: paragraph.field_background_color.value.0,
+      media: content.field_media,
+      heading: content.field_heading,
+      text: content.field_text_content,
+      direction: paragraph.field_direction.value
+    } %}
+  </div>
+{% endblock paragraph %}

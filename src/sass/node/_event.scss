@@ -1,0 +1,27 @@
+.date-box {
+  text-transform: uppercase;
+  line-height: 1;
+  height: 107px;
+  width: 107px;
+
+  .date-month {
+    font-size: 20px;
+  }
+
+  .date-day {
+    font-size: 42px;
+    font-weight: bold;
+  }
+}
+
+.event--teaser {
+  h4 {
+    line-height: 1.25;
+  }
+}
+
+div.viewsreference--view-title {
+  font-size: 36px;
+  font-family: $font-family-serif;
+  margin-bottom: 2rem;
+}

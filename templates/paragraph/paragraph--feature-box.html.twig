@@ -1,0 +1,22 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  'paragraph--id--' ~ paragraph.id(),
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'd-flex justify-content-center'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% include '@d324theme/feature_box/feature_box.twig' with {
+      main_url: main_url,
+      feature_image: content.field_featured_media,
+      heading: content.field_heading,
+      text: content.field_description,
+      calls_to_action: paragraph.field_call_to_action_buttons,
+      direction: paragraph.field_direction.value
+    } %}
+  </div>
+{% endblock paragraph %}

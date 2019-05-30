@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Template for a embedded_view component.
+ *
+ * Available config:
+ * - heading: text
+ * - sub_heading: text
+ * - pre_heading: text
+ * - view : view content
+ */
+#}
+{% set css_classes = [
+  'embedded-view'
+] %}
+<div {{ attributes.addClass(css_classes) }}>
+  {% if pre_heading %}
+    <h6><small>{{ pre_heading|render|striptags }}</small></h6>
+  {% endif %}
+  {% if heading %}
+    <h3>{{ heading|render|striptags }}</h3>
+  {% endif %}
+  {% if sub_heading %}
+    <h4>{{ sub_heading|render|striptags }}</h4>
+  {% endif %}
+  {% if view %}
+    {{ view }}
+  {% endif %}
+</div>

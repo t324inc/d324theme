@@ -1,0 +1,38 @@
+// Landing Page
+// -----------------------------------------------------------------------------
+
+.webform-element--title-inline {
+  display: flex;
+
+  @extend .shadow-sm;
+
+  label.form-required:after {
+    display: none;
+  }
+
+  > label {
+    background: #1e2245;
+    color: #fff;
+    width: 100px;
+    margin: 0;
+    min-width: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input, textarea {
+    border-color: #D9D9D9;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .intl-tel-input {
+    width: 100%;
+  }
+}
+
+.paragraph>.paragraph__column {
+  padding: 0;
+}

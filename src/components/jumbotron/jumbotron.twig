@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Template for a jumbotron component.
+ *
+ * Available config:
+ * - hero_text: string
+ * - calls_to_action: array of links
+ * - background_image: image
+ * - attributes: Attributes array.
+ */
+#}
+{% set css_classes = [
+  'jumbotron',
+  'd-flex',
+  'align-items-center',
+  'b-lazy',
+  background_image ? 'text-white'
+] %}
+<div{{ attributes.addClass(css_classes) }}>
+  {% if background_image %}
+    <img class="card-img" src="{{ background }}" />
+  {% endif %}
+  <div class="card-img-overlay container">
+    {% if hero_text %}
+      <h1 class="text-white">{{ hero_text }}</h1>
+    {% endif %}
+    {% if calls_to_action %}
+      <div class="calls-to-action">
+        {%- for item in calls_to_action -%}
+          {% set link_attributes = create_attribute() %}
+          {% set link_attributes = link_attributes.addClass('btn btn-primary shadow') %}
+          {{ link(item.title, item.uri, link_attributes) }}
+        {%- endfor -%}
+      </div>
+    {% endif %}
+  </div>
+</div>

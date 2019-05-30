@@ -1,0 +1,19 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  'paragraph--id--' ~ paragraph.id(),
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% include '@d324theme/embedded_view/embedded_view.twig' with {
+      heading: content.field_heading,
+      sub_heading: content.field_sub_heading,
+      pre_heading: content.field_pre_heading,
+      view: content.field_embedded_view
+    } %}
+  </div>
+{% endblock paragraph %}

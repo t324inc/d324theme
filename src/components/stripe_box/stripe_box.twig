@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Template for a feature_box component.
+ *
+ * Available config:
+ * - background_image: image
+ * - background_color: color
+ * - media: media item
+ * - heading: string
+ * - text: content text
+ * - calls_to_action: array of links
+ * - direction: left or right
+ * - attributes: Attributes array.
+ */
+#}
+{% set css_classes = [
+  'stripe-box'
+] %}
+{% set flex_direction = direction == 'left' ? 'flex-row-reverse' : 'flex-row' %}
+<div {{ attributes.addClass(css_classes) }}>
+  {% if background_image %}
+    <img class="background-img" src="{{ background_image }}"/>
+  {% endif %}
+  {% if background_color %}
+    <div class="color-overlay" style="background-color: {{ background_color['color'] }}; opacity: {{ background_color['opacity'] }}"></div>
+  {% endif %}
+  <div class="container">
+    <div class="row {{ flex_direction }} py-9">
+      <div class="col-sm d-flex flex-column justify-content-center stripe-content">
+        {% if heading %}
+          <h3 class="pb-4">{{ heading }}</h3>
+        {% endif %}
+        {{ text }}
+      </div>
+      {% if media %}
+        <div class="col-sm-6 stripe-media">
+          {{ media }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  'paragraph--id--' ~ paragraph.id(),
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% include '@d324theme/jumbotron/jumbotron.twig' with {
+      background_image: background,
+      hero_text: content.field_hero_text,
+      calls_to_action: paragraph.field_calls_to_actions
+    } %}
+  </div>
+{% endblock paragraph %}

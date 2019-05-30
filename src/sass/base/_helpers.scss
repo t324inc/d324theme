@@ -1,0 +1,47 @@
+// Image overlay cards
+.img-overlay.dark {
+  background: $primary;
+  position: relative;
+  > .img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: .25;
+  }
+  > .overlay {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Image backgrounds
+
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Color overlays
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Media Loading (Centering Blazy loading throbber)
+
+.media--loading {
+  background: #eee;
+  position: static;
+}

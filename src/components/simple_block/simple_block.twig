@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Template for a simple_block component.
+ *
+ * Available config:
+ * - heading: text
+ * - sub_heading: text
+ * - pre_heading: text
+ * - media: media item
+ * - text_content: text
+ * - buttons: array of links
+ */
+#}
+{% set css_classes = [
+  'simple-block'
+] %}
+<div {{ attributes.addClass(css_classes) }}>
+  {% if pre_heading %}
+    <h6><small>{{ pre_heading|render|striptags }}</small></h6>
+  {% endif %}
+  {% if heading %}
+    <h3>{{ heading|render|striptags }}</h3>
+  {% endif %}
+  {% if sub_heading %}
+    <h4>{{ sub_heading|render|striptags }}</h4>
+  {% endif %}
+  {% if media %}
+    {{ media }}
+  {% endif %}
+  {% if text_content or buttons %}
+    {% if text_content %}
+      {{ text_content }}
+    {% endif %}
+    {%- for button in buttons -%}
+      {% set button_attributes = create_attribute() %}
+      {% set button_attributes = button_attributes.addClass('btn btn-primary') %}
+      {{ link(button.title, button.uri, button_attributes) }}
+    {%- endfor -%}
+  {% endif %}
+</div>

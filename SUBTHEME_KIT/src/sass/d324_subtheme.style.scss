@@ -5,14 +5,14 @@
 // Try to use the local scss partials to add and organize your overrides
 // Create new partials when appropriate.  Don't let any of them get too big!
 
-// REQUIRED = Initialize Variables
+// REQUIRED - Initialize Variables
 // -----------------------------------------------------------------------------
 @import "~bootstrap/scss/functions";
 @import "base/D324_SUBTHEME_MACHINE_NAME_variables";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
-// HIGHLY RECOMMENDED = Basic Typography and Layout
+// HIGHLY RECOMMENDED - Basic Typography and Layout
 // -----------------------------------------------------------------------------
 @import "~bootstrap/scss/print";
 @import "~bootstrap/scss/reboot";

@@ -1,0 +1,19 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  'paragraph--id--' ~ paragraph.id(),
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'd-flex justify-content-center'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% include '@d324theme/view_stripe/view_stripe.twig' with {
+      background_color: paragraph.field_background_color.value.0,
+      background_color_2: paragraph.field_background_color_2.value.0,
+      view: content.field_embedded_view
+    } %}
+  </div>
+{% endblock paragraph %}
