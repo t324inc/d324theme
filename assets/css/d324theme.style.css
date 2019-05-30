@@ -1462,7 +1462,7 @@ button.bg-black:focus {
   white-space: normal;
 }
 
-.shadow-sm, .webform-element--title-inline {
+.shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
@@ -5465,11 +5465,10 @@ a.text-black:hover, a.text-black:focus {
   visibility: hidden !important;
 }
 
-.img-overlay.dark {
-  background: #11689B;
+.img-overlay {
   position: relative;
 }
-.img-overlay.dark > .img-bg {
+.img-overlay > .img-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -5478,7 +5477,7 @@ a.text-black:hover, a.text-black:focus {
   z-index: 0;
   opacity: 0.25;
 }
-.img-overlay.dark > .overlay {
+.img-overlay > .overlay {
   position: relative;
   z-index: 1;
 }
@@ -5555,30 +5554,11 @@ div.viewsreference--view-title {
   margin-bottom: 2rem;
 }
 
-.webform-element--title-inline {
-  display: flex;
+.field--name-field-landing-page-sections > .field__item {
+  margin: 6rem 0;
 }
-.webform-element--title-inline label.form-required:after {
-  display: none;
-}
-.webform-element--title-inline > label {
-  background: #1e2245;
-  color: #fff;
-  width: 100px;
-  margin: 0;
-  min-width: 100px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.webform-element--title-inline input, .webform-element--title-inline textarea {
-  border-color: #D9D9D9;
-  border-radius: 0;
-  width: 100%;
-}
-.webform-element--title-inline .intl-tel-input {
-  width: 100%;
+.field--name-field-landing-page-sections:first-child > .field__item {
+  margin-top: 0;
 }
 
 .paragraph > .paragraph__column {
