@@ -81,7 +81,7 @@ d324fontfamilies:
 # or equivalent and will be added to other related files such as the Gutenberg theme support yaml file
 d324themefontsizing:
   body:
-    font-size: 1
+    font-size: 1rem
     font-weight: normal
     line-height: 1.875
   headings:
