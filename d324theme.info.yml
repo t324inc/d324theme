@@ -37,14 +37,6 @@ libraries:
 libraries-override:
   seven/global-styling: false
 
-libraries-extend:
-  gutenberg/blocks-edit:
-    - d324theme/gutenberg-edit
-    - d324theme/gutenberg-js
-  gutenberg/blocks-view:
-    - d324theme/gutenberg-view
-    - d324theme/gutenberg-js
-
 ckeditor_stylesheets:
   - assets/css/d324theme.style.css
 

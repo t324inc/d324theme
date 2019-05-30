@@ -39,6 +39,34 @@ $enable-prefers-reduced-motion-media-query: true;
 $enable-grid-classes: true;
 $enable-pointer-cursor-for-buttons: true;
 $enable-print-styles: true;
-$enable-responsive-font-sizes: false;
+$enable-responsive-font-sizes: true;
 $enable-validation-icons: true;
 $enable-deprecation-messages: true;
+
+$d324-base-font-size: 1;
+$d324-base-font-weight: normal;
+$d324-base-line-height: 1.875;
+
+$d324-h1-font-size: 3rem;
+$d324-h1-font-weight: 700;
+$d324-h1-line-height: 1.05;
+
+$d324-h2-font-size: 2.25rem;
+$d324-h2-font-weight: 700;
+$d324-h2-line-height: 1.25;
+
+$d324-h3-font-size: 1.75rem;
+$d324-h3-font-weight: 700;
+$d324-h3-line-height: 1.25;
+
+$d324-h4-font-size: 1.5rem;
+$d324-h4-font-weight: 700;
+$d324-h4-line-height: 1.2222222;
+
+$d324-h5-font-size: 1.25rem;
+$d324-h5-font-weight: 700;
+$d324-h5-line-height: 1;
+
+$d324-h6-font-size: 1.125rem;
+$d324-h6-font-weight: 700;
+$d324-h6-line-height: 1;

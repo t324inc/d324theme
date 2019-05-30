@@ -18,14 +18,6 @@
   <{{ html_tag }}{{ attributes|without('id').addClass(classes) }}>
 {% endif %}
 
-  {{ title_prefix }}
-  {% if label %}
-    {% block label %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
-    {% endblock %}
-  {% endif %}
-  {{ title_suffix }}
-
   {% block content %}
     {{ content }}
   {% endblock %}

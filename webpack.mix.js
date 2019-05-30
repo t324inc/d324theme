@@ -26,8 +26,6 @@ const proxy = utilitySettings['browsersync-proxy-url'].value;
  |--------------------------------------------------------------------------
  */
 
-
-
 // Create SASS vars to inject into SCSS
 const sassInjection = prepSassVars(confYaml);
 
@@ -38,15 +36,6 @@ const sassMsg = "// DON'T UPDATE THIS FILE\n"
   + "// Change them inside of d324theme.settings.yml \"npm run dev\" or \"npm run production\".\n\n";
 fs.writeFileSync('src/sass/base/_d324theme_settings.scss',
   sassMsg + sassInjection);
-
-// Create Gutenberg vars for theme support
-const gutenVars = prepGutenbergVars(confYaml);
-const gutenMsg = "# Don't update this file unless you want Gutenberg colors "
-  + "to become separated from D324 theme variables.  Instead,\n"
-  + "# update the file d324theme.settings.yml and run \"npm run "
-  + "dev\" or \"npm run production\".\n\n";
-fs.writeFileSync('d324theme.gutenberg.yml',
-  gutenMsg + gutenVars);
 
 /*
  |--------------------------------------------------------------------------
@@ -88,9 +77,7 @@ mix.browserSync({
  */
 
 mix.sass('src/sass/d324theme.bootstrap.scss', 'css')
-  .sass('src/sass/d324theme.style.scss', 'css')
-  .sass('src/gutenberg/d324theme.gutenberg.view.scss', 'css')
-  .sass('src/gutenberg/d324theme.gutenberg.edit.scss', 'css');
+  .sass('src/sass/d324theme.style.scss', 'css');
 
 /*
  |--------------------------------------------------------------------------
@@ -113,26 +100,18 @@ function prepSassVars(confYaml) {
     'd324layout',
     'd324bootstrapoptions'
   ];
-  return sections.map(function(section) {
+  const sassVars = sections.map(function(section) {
     return Object.keys(confYaml[section]).map(function (name) {
       return "$" + name + ": " + confYaml[section][name].value + ";";
     }).join('\n');
   }).join('\n\n');
-}
-
-function prepGutenbergVars(confYaml) {
-  let gutenberg_vars = {
-    'theme-support': {
-      colors: []
-    }
-  };
-  Object.keys(confYaml['d324colors']).map(function (name) {
-    // Create Gutenberg theme swatch vars
-    gutenberg_vars['theme-support'].colors.push({
-      slug: name,
-      name: confYaml['d324colors'][name].name,
-      color: confYaml['d324colors'][name].value
-    });
-  });
-  return yaml.dump(gutenberg_vars);
+  const fontBase = Object.keys(confYaml['d324themefontsizing']['body']).map(function (name) {
+    return "$d324-base-" + name + ": " + confYaml['d324themefontsizing']['body'][name] + ";";
+  }).join('\n');
+  const headingsBase = Object.keys(confYaml['d324themefontsizing']['headings']).map(function (elem) {
+    return Object.keys(confYaml['d324themefontsizing']['headings'][elem]).map(function (name) {
+      return "$d324-" + elem + "-" + name + ": " + confYaml['d324themefontsizing']['headings'][elem][name] + ";";
+    }).join('\n');
+  }).join('\n\n');
+  return [sassVars, fontBase, headingsBase].join('\n\n');
 }

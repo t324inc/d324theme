@@ -29,17 +29,6 @@ libraries:
 
 libraries-override:
   d324theme/bootstrap: false
-  d324theme/gutenberg-edit: false
-  d324theme/gutenberg-view: false
-  d324theme/gutenberg-js: false
-
-libraries-extend:
-  gutenberg/blocks-edit:
-    - D324_SUBTHEME_MACHINE_NAME/gutenberg-edit
-    - D324_SUBTHEME_MACHINE_NAME/gutenberg-js
-  gutenberg/blocks-view:
-    - D324_SUBTHEME_MACHINE_NAME/gutenberg-view
-    - D324_SUBTHEME_MACHINE_NAME/gutenberg-js
 
 ckeditor_stylesheets:
   - assets/css/D324_SUBTHEME_MACHINE_NAME.style.css

@@ -76,31 +76,39 @@ d324fontfamilies:
     name: Theme Heading Font Family Stack
     value: $font-family-serif
 
-# D324 GUTENBERG FONT SIZES
-# Set Gutenberg editor font size settings here.  They will automatically be injected into SASS as variables during
-# "npm run dev" or equivalent and will be added to other related files such as the Gutenberg theme support yaml file
-# Note: Not yet implemented
-d324gutenbergfontsizes:
-  guten-small:
-    slug: small
-    name: Small
-    value: 12
-  guten-normal:
-    slug: normal
-    name: Normal
-    value: 16
-  guten-medium:
-    slug: medium
-    name: Medium
-    value: 20
-  guten-large:
-    slug: large
-    name: Large
-    value: 32
-  guten-huge:
-    slug: huge
-    name: Huge
-    value: 48
+# D324 THEME FONT SIZING
+# Set theme font family settings here.  They will automatically be injected into SASS as variables during "npm run dev"
+# or equivalent and will be added to other related files such as the Gutenberg theme support yaml file
+d324themefontsizing:
+  body:
+    font-size: 1
+    font-weight: normal
+    line-height: 1.875
+  headings:
+    h1:
+      font-size: 3rem
+      font-weight: 700
+      line-height: 1.05
+    h2:
+      font-size: 2.25rem
+      font-weight: 700
+      line-height: 1.25
+    h3:
+      font-size: 1.75rem
+      font-weight: 700
+      line-height: 1.25
+    h4:
+      font-size: 1.5rem
+      font-weight: 700
+      line-height: 1.2222222
+    h5:
+      font-size: 1.25rem
+      font-weight: 700
+      line-height: 1
+    h6:
+      font-size: 1.125rem
+      font-weight: 700
+      line-height: 1
 
 # D324 THEME LAYOUT
 # Set theme layout settings here to be included in variables.scss for the compiler
@@ -141,7 +149,7 @@ d324bootstrapoptions:
     value: true
   enable-responsive-font-sizes:
     name: Theme Bootstrap Option - Enable Responsive Font Sizes
-    value: false
+    value: true
   enable-validation-icons:
     name: Theme Bootstrap Option - Enable Validation Icons
     value: true

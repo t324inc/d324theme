@@ -17790,28 +17790,6 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./src/gutenberg/d324theme.gutenberg.edit.scss":
-/*!*****************************************************!*\
-  !*** ./src/gutenberg/d324theme.gutenberg.edit.scss ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/gutenberg/d324theme.gutenberg.view.scss":
-/*!*****************************************************!*\
-  !*** ./src/gutenberg/d324theme.gutenberg.view.scss ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./src/js/d324theme.script.js":
 /*!************************************!*\
   !*** ./src/js/d324theme.script.js ***!
@@ -17861,17 +17839,15 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/d324theme.script.js ./src/sass/d324theme.bootstrap.scss ./src/sass/d324theme.style.scss ./src/gutenberg/d324theme.gutenberg.view.scss ./src/gutenberg/d324theme.gutenberg.edit.scss ***!
-  \**********************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************!*\
+  !*** multi ./src/js/d324theme.script.js ./src/sass/d324theme.bootstrap.scss ./src/sass/d324theme.style.scss ***!
+  \**************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /mnt/d/PHPStorm/t324inc/d324-sample-project/web/themes/d324/d324theme/src/js/d324theme.script.js */"./src/js/d324theme.script.js");
 __webpack_require__(/*! /mnt/d/PHPStorm/t324inc/d324-sample-project/web/themes/d324/d324theme/src/sass/d324theme.bootstrap.scss */"./src/sass/d324theme.bootstrap.scss");
-__webpack_require__(/*! /mnt/d/PHPStorm/t324inc/d324-sample-project/web/themes/d324/d324theme/src/sass/d324theme.style.scss */"./src/sass/d324theme.style.scss");
-__webpack_require__(/*! /mnt/d/PHPStorm/t324inc/d324-sample-project/web/themes/d324/d324theme/src/gutenberg/d324theme.gutenberg.view.scss */"./src/gutenberg/d324theme.gutenberg.view.scss");
-module.exports = __webpack_require__(/*! /mnt/d/PHPStorm/t324inc/d324-sample-project/web/themes/d324/d324theme/src/gutenberg/d324theme.gutenberg.edit.scss */"./src/gutenberg/d324theme.gutenberg.edit.scss");
+module.exports = __webpack_require__(/*! /mnt/d/PHPStorm/t324inc/d324-sample-project/web/themes/d324/d324theme/src/sass/d324theme.style.scss */"./src/sass/d324theme.style.scss");
 
 
 /***/ })

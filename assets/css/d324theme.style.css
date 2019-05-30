@@ -1,4 +1,9 @@
 .a2a_kit a {
   display: inline-block;
 }
+
+#toolbar-administration {
+  z-index: 1050;
+  position: relative;
+}
 /*# sourceMappingURL=d324theme.style.css.map*/

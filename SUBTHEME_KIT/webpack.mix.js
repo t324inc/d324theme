@@ -39,15 +39,6 @@ const sassMsg = "// DON'T UPDATE THIS FILE\n"
 fs.writeFileSync('src/sass/base/_D324_SUBTHEME_MACHINE_NAME_settings.scss',
   sassMsg + sassInjection);
 
-// Create Gutenberg vars for theme support
-const gutenVars = prepGutenbergVars(confYaml);
-const gutenMsg = "# Don't update this file unless you want Gutenberg colors "
-  + "to become separated from D324_SUBTHEME_NAME theme variables.  Instead,\n"
-  + "# update the file D324_SUBTHEME_MACHINE_NAME.settings.yml and run \"npm run "
-  + "dev\" or \"npm run production\".\n\n";
-fs.writeFileSync('D324_SUBTHEME_MACHINE_NAME.gutenberg.yml',
-  gutenMsg + gutenVars);
-
 /*
  |--------------------------------------------------------------------------
  | Configuration
@@ -87,10 +78,7 @@ mix.browserSync({
  |--------------------------------------------------------------------------
  */
 
-mix.sass('src/sass/D324_SUBTHEME_MACHINE_NAME.bootstrap.scss', 'css')
-  .sass('src/sass/D324_SUBTHEME_MACHINE_NAME.style.scss', 'css')
-  .sass('src/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.view.scss', 'css')
-  .sass('src/gutenberg/D324_SUBTHEME_MACHINE_NAME.gutenberg.edit.scss', 'css');
+mix.sass('src/sass/D324_SUBTHEME_MACHINE_NAME.style.scss', 'css');
 
 /*
  |--------------------------------------------------------------------------
@@ -118,21 +106,4 @@ function prepSassVars(confYaml) {
       return "$" + name + ": " + confYaml[section][name].value + ";";
     }).join('\n');
   }).join('\n\n');
-}
-
-function prepGutenbergVars(confYaml) {
-  let gutenberg_vars = {
-    'theme-support': {
-      colors: []
-    }
-  };
-  Object.keys(confYaml['d324colors']).map(function (name) {
-    // Create Gutenberg theme swatch vars
-    gutenberg_vars['theme-support'].colors.push({
-      slug: name,
-      name: confYaml['d324colors'][name].name,
-      color: confYaml['d324colors'][name].value
-    });
-  });
-  return yaml.dump(gutenberg_vars);
 }
