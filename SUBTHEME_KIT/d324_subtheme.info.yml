@@ -8,6 +8,7 @@ package: D324
 base theme: d324theme
 logo: logo.svg
 screenshot: screenshot.png
+hidden: true
 
 regions:
   above_navbar: Above Navbar
