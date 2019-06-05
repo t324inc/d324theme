@@ -32,7 +32,7 @@
 }
 
 .calls-to-action a, .feature-box-ctas a {
-  margin: 2rem 0.75rem;
+  margin: 0rem .5rem;
   padding: 1.25rem 3rem;
   font-size: 1rem;
   border: none;
@@ -43,13 +43,5 @@
   
   &:last-child {
     margin-right: 0;
-  }
-}
-
-.feature-box .feature-box-ctas {
-  margin-bottom: -5.5rem;
-  margin-top: 0rem;
-  a {
-    font-size: 1rem;
   }
 }
