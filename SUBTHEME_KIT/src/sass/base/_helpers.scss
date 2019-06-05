@@ -1,0 +1,27 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    // Responsive Shadows
+    .shadow#{$infix}-md {
+      box-shadow: $box-shadow !important;
+    }
+    .shadow#{$infix}-sm {
+      box-shadow: $box-shadow-sm !important;
+    }
+    .shadow#{$infix}-lg {
+      box-shadow: $box-shadow-lg !important;
+    }
+    .shadow#{$infix}-none {
+      box-shadow: none !important;
+    }
+
+    // Responsive Backgrounds
+    @each $color, $value in $theme-colors {
+      @include bg-variant(".bg#{$infix}-#{$color}", $value);
+    }
+    .bg#{$infix}-transparent {
+      background-color: transparent !important;
+    }
+  }
+}
