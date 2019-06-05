@@ -25,6 +25,7 @@ regions:
   footer: Footer
 
 libraries:
+  - D324_SUBTHEME_MACHINE_NAME/bootstrap
   - D324_SUBTHEME_MACHINE_NAME/style
 
 libraries-override:

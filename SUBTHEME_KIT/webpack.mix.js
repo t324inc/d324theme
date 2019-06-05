@@ -78,7 +78,9 @@ mix.browserSync({
  |--------------------------------------------------------------------------
  */
 
-mix.sass('src/sass/D324_SUBTHEME_MACHINE_NAME.style.scss', 'css');
+mix.sass('src/sass/D324_SUBTHEME_MACHINE_NAME.bootstrap.scss', 'css')
+  .sass('src/sass/D324_SUBTHEME_MACHINE_NAME.style.scss', 'css');
+
 
 /*
  |--------------------------------------------------------------------------

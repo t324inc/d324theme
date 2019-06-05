@@ -1,7 +1,7 @@
 bootstrap:
   version: 1.0
   css:
-    theme:
+    component:
       assets/css/d324theme.bootstrap.css: {}
 
 style:
