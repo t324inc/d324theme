@@ -1,0 +1,7 @@
+#auth_box {
+  input {
+    &[type="text"], &[type="password"] {
+      max-width: 100%;
+    }
+  }
+}
