@@ -5,7 +5,7 @@ import 'bootstrap';
 
   'use strict';
 
-  Drupal.behaviors.helloWorld = {
+  Drupal.behaviors.d324theme = {
     attach: function (context) {
       // console.log('Hello World');
     }

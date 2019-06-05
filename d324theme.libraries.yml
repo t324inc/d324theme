@@ -1,13 +1,8 @@
 bootstrap:
   version: 1.0
-  js:
-    node_modules/popper.js/dist/umd/popper.min.js: {}
-    node_modules/bootstrap/dist/js/bootstrap.min.js: {}
   css:
     theme:
       assets/css/d324theme.bootstrap.css: {}
-  dependencies:
-    - core/jquery
 
 style:
   version: 1.0
@@ -15,8 +10,6 @@ style:
     theme:
       assets/css/d324theme.style.css: {}
   js:
-    node_modules/popper.js/dist/umd/popper.min.js: {}
-    node_modules/bootstrap/dist/js/bootstrap.min.js: {}
     assets/js/d324theme.script.js: {}
   dependencies:
     - core/jquery

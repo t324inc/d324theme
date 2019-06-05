@@ -7,9 +7,36 @@
 {%
   set classes = [
   bundle|clean_class ~ '__' ~ field_name_clean|clean_class,
-  label_display == 'inline' ? 'd-flex',
+  'field--name-' ~ field_name|clean_class,
+  'field--type-' ~ field_type|clean_class,
+  'field--label-' ~ label_display,
+  label_display == 'inline' ? 'd-flex'
 ]
 %}
+{% if classes_extra %}
+  {% set classes = classes|merge(classes_extra) %}
+{% endif %}
+{% set multi_container_attributes = create_attribute() %}
+{%
+  set multi_container_classes = [
+  'field-items',
+  'field-items__' ~ field_name|clean_class,
+  'field-items__' ~ field_type|clean_class
+]
+%}
+{% if multi_container_classes_extra %}
+  {% set multi_container_classes = multi_container_classes|merge(multi_container_classes_extra) %}
+{% endif %}
+{%
+  set item_classes = [
+  'field-item',
+  'field-item__' ~ field_name|clean_class,
+  'field-item__' ~ field_type|clean_class,
+]
+%}
+{% if item_classes_extra %}
+  {% set item_classes = item_classes|merge(item_classes_extra) %}
+{% endif %}
 {%
   set title_classes = [
   'field__label',
@@ -17,32 +44,25 @@
   label_display == 'visually_hidden' ? 'visually-hidden',
 ]
 %}
-
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes.addClass(classes) }}>
-      {% for item in items %}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
-    {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes.addClass(classes) }}>
+{% if title_classes_extra %}
+  {% set title_classes = title_classes|merge(title_classes_extra) %}
+{% endif %}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
     <div{{ title_attributes.addClass(title_classes) }}>
       {{ label }}{% if label_display == 'inline' %}<span class="field__label__suffix mr-1">:</span>{% endif %}
     </div>
-    {% if multiple %}
-    <div class="field__items">
-      {% endif %}
-      {% for item in items %}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-      {% endfor %}
-      {% if multiple %}
-    </div>
+  {% endif %}
+  {% if multiple %}
+    <div{{ multi_container_attributes.addClass(multi_container_classes) }}>
+  {% endif %}
+  {% for item in items %}
+    {% if item_margin_size %}
+      {% set item_margin_class = loop.length < 2 ? '' : loop.first ? 'mb-' ~ item_margin_size : loop.last ? 'mt-' ~ item_margin_size : 'my-' ~ item_margin_size %}
     {% endif %}
-  </div>
-{% endif %}
+    <div{{ item.attributes.addClass(item_classes).addClass(item_margin_class) }}>{{ item.content }}</div>
+  {% endfor %}
+  {% if multiple %}
+    </div>
+  {% endif %}
+</div>

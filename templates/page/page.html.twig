@@ -42,7 +42,8 @@
     {% endblock %}
   {% endembed %}
 
-  <main class="pt-5 pb-5 clearfix">
+  {% block main %}
+  <main class="mt-5 mb-8 clearfix">
     {% if page.header %}
       <header class="page__header mb-3">
         <div class="container">
@@ -51,15 +52,19 @@
       </header>
     {% endif %}
 
-    {% if page.titlearea %}
-      <div class="page__titlearea-wrapper">
-        <div class="container">
-          <div class="page__titlearea text-white align-center justify-content-start">
-            {{ page.titlearea }}
+    {% block titlearea %}
+      {% if page.titlearea %}
+        <div class="page__titlearea-wrapper">
+          <div class="container">
+            <div class="page__titlearea text-white align-center justify-content-start">
+              {% block titleinner %}
+                {{ page.titlearea }}
+              {% endblock %}
+            </div>
           </div>
         </div>
-      </div>
-    {% endif %}
+      {% endif %}
+    {% endblock %}
 
     {% if page.content %}
       <div class="page__content">
@@ -79,6 +84,7 @@
       </div>
     {% endif %}
   </main>
+  {% endblock %}
 
   {% if page.above_footer %}
     <div class="page__above-footer">

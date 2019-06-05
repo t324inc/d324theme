@@ -1,6 +1,3 @@
-import 'popper.js';
-import 'bootstrap';
-
 (function () {
 
   'use strict';
