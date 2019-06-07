@@ -8,11 +8,9 @@
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% include '@d324theme/jumbotron/jumbotron.twig' with {
-      background_image: background,
-      hero_text: content.field_hero_text,
-      calls_to_action: paragraph.field_calls_to_actions
-    } %}
-  </div>
+  {% include '@d324theme/jumbotron/jumbotron.twig' with {
+    background_image: background,
+    hero_text: content.field_hero_text,
+    calls_to_action: paragraph.field_calls_to_actions
+  } %}
 {% endblock paragraph %}

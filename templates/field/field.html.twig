@@ -49,9 +49,7 @@
 {% endif %}
 <div{{ attributes.addClass(classes) }}>
   {% if not label_hidden %}
-    <div{{ title_attributes.addClass(title_classes) }}>
-      {{ label }}{% if label_display == 'inline' %}<span class="field__label__suffix mr-1">:</span>{% endif %}
-    </div>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
   {% endif %}
   {% if multiple %}
     <div{{ multi_container_attributes.addClass(multi_container_classes) }}>

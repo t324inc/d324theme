@@ -36,6 +36,7 @@ libraries:
 
 libraries-override:
   seven/global-styling: false
+  core/jquery: d324theme/jquery-update
 
 ckeditor_stylesheets:
   - assets/css/d324theme.style.css

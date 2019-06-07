@@ -19,19 +19,19 @@
 {% if path %}
   <a href="{{ path }}" class="navbar-brand d-flex align-items-center {{ utility_classes }}" aria-label="{{ text }}">
     {% if image %}
-      {{ navbar_brand.image(image, width, height) }}
+      {{ navbar_brand.image(image, text, width, height) }}
     {% endif %}
     {{ text }}
   </a>
 {% else %}
   <span class="navbar-brand h1 mb-0 {{ utility_classes }}" aria-label="{{ text }}">
     {% if image %}
-      {{ navbar_brand.image(image) }}
+      {{ navbar_brand.image(image, text) }}
     {% endif %}
     {{ text }}
   </span>
 {% endif %}
 
-{% macro image(src, width, height) %}
-  <img src="{{ src }}" width="{{ width|default(30) }}" height="{{ height|default('auto') }}" class="mr-2" />
+{% macro image(src, alt, width, height) %}
+  <img alt="{{ alt }}" src="{{ src }}" width="{{ width|default(30) }}" height="{{ height|default('auto') }}" class="mr-2" />
 {% endmacro %}

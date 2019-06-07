@@ -14,20 +14,20 @@
   'jumbotron',
   'd-flex',
   'align-items-center',
-  'b-lazy',
   'bg-dark',
-  background_image ? 'text-white'
+  background_image ? 'b-lazy background-container text-white'
 ] %}
+{% if background_image %}
+<div{{ attributes.addClass(css_classes) }} data-src="{{ background }}" style="background-size: cover;">
+{% else %}
 <div{{ attributes.addClass(css_classes) }}>
-  {% if background_image %}
-    <img class="card-img" src="{{ background }}" />
-  {% endif %}
-  <div class="card-img-overlay container">
+{% endif %}
+  <div class="card-img-overlay container px-0">
     {% if hero_text %}
-      <h1 class="text-white">{{ hero_text }}</h1>
+      <h1 class="text-white mx-lg-6 mx-md-4">{{ hero_text }}</h1>
     {% endif %}
     {% if calls_to_action %}
-      <div class="calls-to-action">
+      <div class="calls-to-action row justify-content-center">
         {%- for item in calls_to_action -%}
           {% set link_attributes = create_attribute() %}
           {% set link_attributes = link_attributes.addClass('btn btn-primary shadow') %}

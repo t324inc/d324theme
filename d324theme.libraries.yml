@@ -14,3 +14,8 @@ style:
   dependencies:
     - core/jquery
     - core/drupal
+
+jquery-update:
+  version: 3.4.1
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js: { minified: true, weight: -20 }

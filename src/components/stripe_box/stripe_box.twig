@@ -15,21 +15,19 @@
  */
 #}
 {% set css_classes = [
-  'stripe-box'
+  'stripe-box',
+  background_image ? 'b-lazy background-container text-white'
 ] %}
 {% set flex_direction = direction == 'left' ? 'flex-row-reverse' : 'flex-row' %}
-<div {{ attributes.addClass(css_classes) }}>
-  {% if background_image %}
-    <img class="background-img" src="{{ background_image }}"/>
-  {% endif %}
+<div {{ attributes.addClass(css_classes) }}{% if background_color %} data-src="{{ background_image }}"{% endif %}>
   {% if background_color %}
     <div class="color-overlay" style="background-color: {{ background_color['color'] }}; opacity: {{ background_color['opacity'] }}"></div>
   {% endif %}
   <div class="container">
-    <div class="row {{ flex_direction }} py-9">
+    <div class="row {{ flex_direction }} px-3 py-5 py-md-5 py-lg-8">
       <div class="col-sm d-flex flex-column justify-content-center stripe-content">
         {% if heading %}
-          <h3 class="pb-4">{{ heading }}</h3>
+          <h3 class="pb-md-4">{{ heading }}</h3>
         {% endif %}
         {{ text }}
       </div>

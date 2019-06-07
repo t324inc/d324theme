@@ -8,12 +8,10 @@
 ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% include '@d324theme/embedded_view/embedded_view.twig' with {
-      heading: content.field_heading,
-      sub_heading: content.field_sub_heading,
-      pre_heading: content.field_pre_heading,
-      view: content.field_embedded_view
-    } %}
-  </div>
+  {% include '@d324theme/embedded_view/embedded_view.twig' with {
+    heading: paragraph.field_heading.value,
+    sub_heading: paragraph.field_sub_heading.value,
+    pre_heading: paragraph.field_pre_heading.value,
+    view: content.field_embedded_view
+  } %}
 {% endblock paragraph %}

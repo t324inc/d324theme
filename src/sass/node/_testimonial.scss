@@ -17,15 +17,6 @@
   border-radius: 0;
   background: none;
   margin-left: 4rem;
-  transition: $transition-base;
-  transition-duration: .25s;
-}
-
-.slick--view--testimonial-slider .slick-prev:hover {
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  border-right: 18px solid $dark;
-  margin-left: calc(4rem - 5.5px);
 }
 
 .slick--view--testimonial-slider .slick-next {
@@ -37,15 +28,6 @@
   border-radius: 0;
   background: none;
   margin-right: 4rem;
-  transition: $transition-base;
-  transition-duration: .25s;
-}
-
-.slick--view--testimonial-slider .slick-next:hover {
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  border-left: 18px solid $dark;
-  margin-right: calc(4rem - 5.5px);
 }
 
 .slick--view--testimonial-slider .slick-prev::before, .slick--view--testimonial-slider .slick-next::before {

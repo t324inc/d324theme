@@ -13,7 +13,7 @@
   <div{{ attributes.addClass(classes) }}>
     <div class="row">
       {% for key, item in content.field_columns if key|first != '#' %}
-        <div class="col-md stripe-column-{{ key + 1 }} item{% if loop.first %} active{% endif %}">
+        <div class="mb-5 mb-md-0 col-md stripe-column-{{ key + 1 }} item{% if loop.first %} active{% endif %}">
           {{ item }}
         </div>
       {% endfor %}
