@@ -55,7 +55,9 @@
 
 // Hide nested container gutters
 
-.container .container.no-nested-gutters {
-  padding-left: 0;
-  padding-right: 0;
+.container .container, .container-fluid .container {
+  &.no-nested-gutters {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
