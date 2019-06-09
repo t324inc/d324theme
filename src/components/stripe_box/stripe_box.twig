@@ -23,8 +23,8 @@
   {% if background_color %}
     <div class="color-overlay" style="background-color: {{ background_color['color'] }}; opacity: {{ background_color['opacity'] }}"></div>
   {% endif %}
-  <div class="container no-nested-gutters">
-    <div class="row {{ flex_direction }} px-3 py-5 py-md-5 py-lg-8">
+  <div class="container">
+    <div class="row {{ flex_direction }} py-5 py-md-5 py-lg-8">
       <div class="col-sm d-flex flex-column justify-content-center stripe-content">
         {% if heading %}
           <h3 class="pb-md-4">{{ heading }}</h3>
