@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Template for a button component.
+ *
+ * Available config:
+ * - fluid_container: boolean
+ * - background: background media
+ * - background_color: color value
+ * - background_color_2: color value
+ * - content: renderable content
+ */
+#}
+<div{{ attributes }}{% if background %} data-src="{{ background }}"{% endif %}>
+{% if background_color and background_color_2 %}
+  <div class="color-overlay" style="background: linear-gradient({{ background_color['color'] }}, {{  background_color_2['color'] }}); opacity: {{ background_color['opacity'] }}"></div>
+{% elseif background_color %}
+  <div class="color-overlay" style="background-color: {{ background_color['color'] }}; opacity: {{ background_color['opacity'] }}"></div>
+{% endif %}
+{% if content %}
+  <div class="embedded-sections container{% if fluid_container %}-fluid p-0{% endif %}">
+    {{ content }}
+  </div>
+{% endif %}
+</div>
