@@ -3,3 +3,14 @@
 .page__content {
 
 }
+
+// Breakout Containers
+// -----------------------------------------------------------------------------
+.breakout-container {
+  left: calc(-1 * (100vw - 100%) / 2);
+  width: 100vw;
+}
+
+body {
+  overflow-x: hidden; // stupidly still needed since 100vw ignores scrollbars
+}

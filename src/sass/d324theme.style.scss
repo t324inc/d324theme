@@ -10,6 +10,12 @@
 @import "base/helpers";
 @import "base/elements";
 
+// Layout
+// -----------------------------------------------------------------------------
+@import "layout/page.content";
+@import "layout/page.footer";
+@import "layout/page.header";
+
 // Modules
 // -----------------------------------------------------------------------------
 @import "modules/addtoany";

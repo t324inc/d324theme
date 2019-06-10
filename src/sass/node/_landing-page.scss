@@ -4,3 +4,15 @@
 .paragraph>.paragraph__column {
   padding: 0;
 }
+
+.field-item__field-landing-page-sections {
+  margin: ($spacer * 6) 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

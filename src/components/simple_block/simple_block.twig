@@ -16,6 +16,9 @@
   'simple-block'
 ] %}
 <div {{ attributes.addClass(css_classes) }}>
+  {% if media %}
+    {{ media }}
+  {% endif %}
   {% if pre_heading %}
     <h6><small>{{ pre_heading|render|striptags }}</small></h6>
   {% endif %}
@@ -24,9 +27,6 @@
   {% endif %}
   {% if sub_heading %}
     <h4>{{ sub_heading|render|striptags }}</h4>
-  {% endif %}
-  {% if media %}
-    {{ media }}
   {% endif %}
   {% if text_content or buttons %}
     {% if text_content %}
