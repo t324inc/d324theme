@@ -32,10 +32,14 @@
     {% if text_content %}
       {{ text_content }}
     {% endif %}
-    {%- for button in buttons -%}
-      {% set button_attributes = create_attribute() %}
-      {% set button_attributes = button_attributes.addClass('btn btn-primary') %}
-      {{ link(button.title, button.uri, button_attributes) }}
-    {%- endfor -%}
+    {% if buttons %}
+      <div class="mt-4 simple-block__buttons">
+      {%- for button in buttons -%}
+        {% set button_attributes = create_attribute() %}
+        {% set button_attributes = button_attributes.addClass('btn btn-primary') %}
+        {{ link(button.title, button.uri, button_attributes) }}
+      {%- endfor -%}
+      </div>
+    {% endif %}
   {% endif %}
 </div>
