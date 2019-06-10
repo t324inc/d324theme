@@ -7,6 +7,8 @@
  * - hero_text: string
  * - calls_to_action: array of links
  * - background_image: image
+ * - background_color: color value
+ * - background_color_2: color value
  * - attributes: Attributes array.
  */
 #}
@@ -22,6 +24,11 @@
 {% else %}
 <div{{ attributes.addClass(css_classes) }}>
 {% endif %}
+  {% if background_color and background_color_2 %}
+    <div class="color-overlay" style="background: linear-gradient({{ background_color['color'] }}, {{  background_color_2['color'] }}); opacity: {{ background_color['opacity'] }}"></div>
+  {% elseif background_color %}
+    <div class="color-overlay" style="background-color: {{ background_color['color'] }}; opacity: {{ background_color['opacity'] }}"></div>
+  {% endif %}
   <div class="card-img-overlay container px-0">
     {% if hero_text %}
       <h1 class="text-white mx-lg-6 mx-md-4">{{ hero_text }}</h1>
