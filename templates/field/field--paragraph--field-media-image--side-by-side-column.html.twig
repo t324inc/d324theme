@@ -1,0 +1,6 @@
+{% for item in items %}
+  {% if item_margin_size %}
+    {% set item_margin_class = loop.length < 2 ? '' : loop.first ? 'mb-' ~ item_margin_size : loop.last ? 'mt-' ~ item_margin_size : 'my-' ~ item_margin_size %}
+  {% endif %}
+  <div class="mx-auto">{{ item.content }}</div>
+{% endfor %}

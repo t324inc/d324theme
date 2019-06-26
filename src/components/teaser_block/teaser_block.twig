@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Template for a teaser_block component.
+ *
+ * Available config:
+ * - image: media item
+ * - heading: text
+ * - text_content: text
+ * - button: link
+ */
+#}
+{% set css_classes = [
+  'teaser-block',
+] %}
+<div {{ attributes.addClass(css_classes) }}>
+  {% if image %}
+    {{ image }}
+  {% endif %}
+  {% if heading %}
+    <h3 class="text-align-center">{{ heading|render|striptags }}</h3>
+  {% endif %}
+  {% if text_content or button %}
+    {% if text_content %}
+      {{ text_content }}
+    {% endif %}
+    {% if button %}
+      <div class="mt-auto pt-3 teaser-block__button">
+          {% set button_attributes = create_attribute() %}
+          {% set button_attributes = button_attributes.addClass('btn btn-primary col-8 mx-auto d-block') %}
+          {{ link(button.0.title, button.0.uri, button_attributes) }}
+      </div>
+    {% endif %}
+  {% endif %}
+</div>

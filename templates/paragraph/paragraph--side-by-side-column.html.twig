@@ -1,0 +1,22 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  'paragraph--id--' ~ paragraph.id(),
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'col-md',
+  'd-flex',
+  'flex-column',
+  'align-center',
+]
+%}
+{% block paragraph %}
+  {% set attributes = attributes.addClass(classes) %}
+  {% include '@d324theme/teaser_block/teaser_block.twig' with {
+    heading: paragraph.field_heading.value,
+    image: content.field_media_image,
+    text_content: content.field_text_content,
+    button: paragraph.field_call_to_action
+  } %}
+{% endblock paragraph %}
