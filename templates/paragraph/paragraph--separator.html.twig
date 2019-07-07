@@ -5,7 +5,7 @@
     'paragraph--id--' ~ paragraph.id(),
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    paragraph.field_spacing_size ? 'my-' ~ paragraph.field_spacing_size.value : ''
+    paragraph.field_spacing_size ? 'py-' ~ paragraph.field_spacing_size.value : ''
 ]
 %}
 {% block paragraph %}

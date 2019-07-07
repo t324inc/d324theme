@@ -1,0 +1,36 @@
+/** Geysir Customization **/
+
+.geysir-field-paragraph-wrapper .geysir-field-paragraph-wrapper .geysir-field-paragraph-links li {
+  bottom: 25%;
+  top: auto;
+  &.add-before,
+  &.add-after {
+    display: none;
+  }
+  .geysir-button {
+    height: 1.875rem;
+    width: 1.875rem;
+  }
+}
+
+.geysir-field-paragraph-links {
+  display: initial !important;
+  pointer-events: none;
+  .geysir-button {
+    opacity: 0;
+    transform: scale(.5);
+    transition: all .35s ease;
+  }
+}
+
+.geysir-field-paragraph-wrapper:hover > .geysir-field-paragraph-links {
+  pointer-events: auto;
+  .geysir-button {
+    opacity: .85;
+    transform: scale(1);
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+}

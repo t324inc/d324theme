@@ -9,6 +9,7 @@
 .breakout-container {
   left: calc(-1 * (100vw - 100%) / 2);
   width: 100vw;
+  position: relative;
 }
 
 body {

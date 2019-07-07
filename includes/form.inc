@@ -16,6 +16,7 @@ function d324theme_theme_suggestions_form_alter(array &$suggestions, array &$var
   if (isset($element['#form_id'])) {
     $suggestions[] = $variables['theme_hook_original'] . '__' . $element['#form_id'];
   }
+
 }
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
