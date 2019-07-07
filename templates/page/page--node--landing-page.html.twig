@@ -11,17 +11,6 @@
     {% endif %}
 
     {% block titlearea %}
-      {% if page.titlearea %}
-        <div class="page__titlearea-wrapper">
-          <div class="container">
-            <div class="page__titlearea text-white align-center justify-content-start">
-              {% block titleinner %}
-                {{ page.titlearea }}
-              {% endblock %}
-            </div>
-          </div>
-        </div>
-      {% endif %}
     {% endblock %}
 
     {% if page.content %}
