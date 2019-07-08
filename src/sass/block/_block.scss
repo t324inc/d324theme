@@ -25,3 +25,10 @@
   color: #fff;
   font-weight: bold;
 }
+
+/** Off Canvas Tray **/
+
+#drupal-off-canvas .media-library-widget-modal .media-library-item--grid,
+#drupal-off-canvas .media-library-selection .media-library-item--grid {
+  width: auto;
+}
