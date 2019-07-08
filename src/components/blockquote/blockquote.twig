@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Template for a quotation component
+ *
+ * Available config:
+ * - quotation text: html
+ * - attribution_name: string
+ * - attribution_extra: string
+ * - alignment: left|center|right
+ * - extra_classes: array of strings
+ */
+#}
+{% set css_classes = [
+  'blockquote',
+  'text-' ~ alignment,
+] %}
+<blockquote{{ attributes.addClass(css_classes).addClass(extra_classes) }}>
+  {{ quotation_text }}
+  {% if attribution_name or attribution_extra %}
+  <footer class="blockquote-footer">
+    {{ attribution_name }}{% if attribution_name and attribution_extra %}<br/>{% if attribution_extra %}<em>{{ attribution_extra }}</em>{% endif %}
+  </footer>
+  {% endif %}
+</blockquote>

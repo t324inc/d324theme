@@ -1,0 +1,20 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  'paragraph--id--' ~ paragraph.id(),
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+  {% include '@d324theme/quotation/quotation.twig' with {
+    quotation_text: background,
+    attribution_name: paragraph.field_attribution_name.value.0,
+    attribution_extra: paragraph.field_attribution_extra.value.0,
+    alignment: content.field_hero_text,
+    extra_classes: []
+  } %}
+  </div>
+{% endblock paragraph %}
