@@ -38,10 +38,9 @@
 .geysir-add-type {
   align-items: center;
   margin: 1rem 0;
-  background: rgba(255,255,255,.15) !important;
   position: relative;
 
-  input.image-button {
+  input.image-button, input.image-button:focus {
     border: none;
     margin-right: 1em !important;
     object-fit: contain;
