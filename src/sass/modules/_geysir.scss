@@ -41,6 +41,7 @@
   position: relative;
 
   input.image-button, input.image-button:focus {
+    background: none !important;
     border: none;
     margin-right: 1em !important;
     object-fit: contain;
