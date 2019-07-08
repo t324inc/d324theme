@@ -4,6 +4,6 @@
  * Template for a local task link.
  */
 #}
-<li{{ attributes.addClass('nav-item') }}>
+<li{{ attributes.addClass('nav-item').addClass("nav-tab-" ~ element['#link']['title']|clean_class) }}>
   <a href="{{ link['#url'] }}" class="nav-link {{ is_active ? 'active' }}">{{ link['#title'] }}</a>
 </li>
