@@ -1,14 +1,19 @@
 .simple-block__field-media {
-  float: left;
-  margin-right: 1.5rem;
-  margin-bottom: .5rem;
-  margin-top: 0;
-  max-width: 40%;
-  box-shadow: $box-shadow;
 
   @include media-breakpoint-only('xs') {
     max-width: 100%;
     width: 100%;
-    margin-bottom: 2rem;
+    margin: 0 0 2rem;
+    float: none;
+  }
+
+}
+
+.image-align-above, .image-align-below {
+  img {
+    width: 100%;
+    box-shadow: $box-shadow;
+    max-height: 20rem;
+    object-fit: cover;
   }
 }

@@ -34,7 +34,7 @@
 @import "node/page";
 @import "node/testimonial";
 
-// paragraph
+// Paragraphs
 // -----------------------------------------------------------------------------
 @import "paragraph/paragraphs.scss";
 @import "paragraph/embedded-view.scss";
@@ -42,6 +42,8 @@
 @import "paragraph/jumbotron.scss";
 @import "paragraph/separator.scss";
 @import "paragraph/simple-block.scss";
+@import "paragraph/blockquote.scss";
+@import "paragraph/columns.scss";
 
 // Blocks
 // -----------------------------------------------------------------------------

@@ -10,15 +10,22 @@
  * - media: media item
  * - text_content: text
  * - buttons: array of links
+ * - alignment: left|right|above|below
  */
 #}
 {% set css_classes = [
   'simple-block'
 ] %}
+{% set image_attributes = create_attribute() %}
+{% set image_classes = [
+  'simple-block-image',
+  alignment == 'left' ? 'image-align-right float-left col-4 mt-2 mr-5 mb-4 p-0',
+  alignment == 'right' ? 'image-align-left float-right col-4 mt-2 ml-5 mb-4 p-0',
+  alignment == 'above' ? 'image-align-above w-100 mb-5',
+  alignment == 'below' ? 'image-align-below w-100 mt-5',
+] %}
 <div {{ attributes.addClass(css_classes) }}>
-  {% if media %}
-    {{ media }}
-  {% endif %}
+  {% if media|render|trim is not empty and alignment != 'below' %}<div{{ image_attributes.addClass(image_classes) }}>{{ media }}</div>{% endif %}
   {% if pre_heading %}
     <h6><small>{{ pre_heading|render|striptags }}</small></h6>
   {% endif %}
@@ -42,4 +49,5 @@
       </div>
     {% endif %}
   {% endif %}
+  {% if media|render|trim is not empty and alignment == 'below' %}<div{{ image_attributes.addClass(image_classes) }}>{{ media }}</div>{% endif %}
 </div>
