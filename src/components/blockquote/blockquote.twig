@@ -4,9 +4,9 @@
  * Template for a quotation component
  *
  * Available config:
- * - quotation text: html
+ * - quotation_text: html
  * - attribution_name: string
- * - attribution_extra: string
+ * - attribution_additional: string
  * - alignment: left|center|right
  * - extra_classes: array of strings
  */
@@ -17,9 +17,10 @@
 ] %}
 <blockquote{{ attributes.addClass(css_classes).addClass(extra_classes) }}>
   {{ quotation_text }}
-  {% if attribution_name or attribution_extra %}
+  {% if attribution_name or attribution_additional %}
   <footer class="blockquote-footer">
-    {{ attribution_name }}{% if attribution_name and attribution_extra %}<br/>{% if attribution_extra %}<em>{{ attribution_extra }}</em>{% endif %}
+    {{ attribution_name }}
+    {% if attribution_additional %}<span>{{ attribution_additional }}</span>{% endif %}
   </footer>
   {% endif %}
 </blockquote>

@@ -1,0 +1,38 @@
+blockquote.blockquote {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  font-style:italic;
+  padding: 1.25rem 2rem 1.25rem 4rem;
+  border-left: .5rem solid $primary;
+  position: relative;
+  background: $gray-100;
+  color: lighten($body-color, 20%);
+
+  &::before{
+    font-family: $headings-font-family;
+    content: "\201C";
+    color: $primary;
+    font-size: 4rem;
+    position: absolute;
+    left: 1rem;
+    top: 0.25rem;
+  }
+
+  &::after{
+    content: '';
+  }
+
+  footer {
+    display:block;
+    color: darken($body-color, 10%);
+    font-style: normal;
+    font-weight: bold;
+    margin-top: .75rem;
+
+    span {
+      font-weight: normal;
+      font-size: 1rem;
+      margin-left: .25rem;
+    }
+  }
+}
