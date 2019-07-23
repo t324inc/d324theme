@@ -100,3 +100,9 @@
     padding-right: 0;
   }
 }
+
+// Increase specificity on hidden class
+
+body .hidden {
+  display: none;
+}

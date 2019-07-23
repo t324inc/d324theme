@@ -4,3 +4,16 @@ ul.slick-dots {
   position: absolute;
   bottom: 1rem;
 }
+
+.slick--skin--fullwidth .slide__media img.b-lazy {
+  display: none;
+
+  &.b-loaded {
+    display: block;
+  }
+}
+
+.slick-arrow::before {
+  color: #fff;
+  font-size: 2rem;
+}

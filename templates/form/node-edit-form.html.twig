@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Theme override for a node edit form.
+ *
+ * Two column template for the node add/edit form.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+#}
+<div class="layout-node-form clearfix">
+  <ul class="node-form-nav nav nav-pills py-2 align-right" id="node-edit-pills-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="pills-node-edit-main-tab" data-toggle="pill" href="#node-edit-main" role="tab" aria-controls="node-edit-main" aria-selected="true">Page Content</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-node-edit-secondary-tab" data-toggle="pill" href="#node-edit-secondary" role="tab" aria-controls="node-edit-secondary" aria-selected="false">Page Settings</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="layout-region layout-region-node-main tab-pane fade show active" id="node-edit-main" role="tabpanel" aria-labelledby="node-edit-main-tab">
+      {{ form|without('advanced', 'footer', 'actions') }}
+    </div>
+    <div class="layout-region layout-region-node-secondary tab-pane fade" id="node-edit-secondary" role="tabpanel" aria-labelledby="node-edit-secondary-tab">
+      {{ form.advanced }}
+    </div>
+  </div>
+  <div class="layout-region layout-region-node-footer">
+    <div class="layout-region-node-footer__content">
+      {{ form.footer }}
+      {{ form.actions }}
+    </div>
+  </div>
+</div>

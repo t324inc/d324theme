@@ -53,6 +53,16 @@ function d324theme_preprocess_form_element(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_node_edit_form().
+ */
+function d324theme_preprocess_node_edit_form(&$variables) {
+  if(!empty($variables['form']['actions']['delete'])) {
+    $variables['form']['actions']['delete']['#attributes']['class'][] = "btn";
+    $variables['form']['actions']['delete']['#attributes']['class'][] = "btn-danger";
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function d324theme_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
