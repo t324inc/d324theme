@@ -1,19 +1,26 @@
-{%
-  set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  'paragraph--id--' ~ paragraph.id(),
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
-]
-%}
+{% extends "paragraph.html.twig" %}
 {% block paragraph %}
-  {% include '@d324theme/jumbotron/jumbotron.twig' with {
-    background_image: background,
-    background_color: paragraph.field_background_color.value.0,
-    background_color_2: paragraph.field_background_color_2.value.0,
-    hero_text: content.field_hero_text,
-    calls_to_action: paragraph.field_calls_to_actions
-  } %}
+  {% set extra_classes = [
+    'jumbotron',
+    'd-flex',
+    'align-items-center',
+    'text-white',
+    'px-0',
+  ] %}
+  <div{{ attributes.addClass(extra_classes) }}>
+    {% if content.field_hero_text %}
+      <h1 class="text-white mx-lg-6 mx-md-4">{{ content.field_hero_text }}</h1>
+    {% endif %}
+    {% if paragraph.field_calls_to_actions %}
+      <div class="calls-to-action row justify-content-center">
+        {%- for item in paragraph.field_calls_to_actions -%}
+          {% set link_attributes = create_attribute() %}
+          {% set link_attributes = link_attributes.addClass('btn btn-primary shadow') %}
+          {{ link(item.title, item.uri, link_attributes) }}
+        {%- endfor -%}
+      </div>
+    {% endif %}
+  </div>
+  {{ attach_library('blazy/load') }}
 {% endblock paragraph %}
-{{ attach_library('blazy/load') }}
+

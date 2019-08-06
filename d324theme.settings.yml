@@ -78,7 +78,6 @@ d324fontfamilies:
 
 # D324 THEME FONT SIZING
 # Set theme font family settings here.  They will automatically be injected into SASS as variables during "npm run dev"
-# or equivalent and will be added to other related files such as the Gutenberg theme support yaml file
 d324themefontsizing:
   body:
     font-size: 1rem

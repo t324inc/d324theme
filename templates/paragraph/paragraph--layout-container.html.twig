@@ -1,5 +1,4 @@
-{% block paragraph %}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-{% endblock paragraph %}
+{% extends "paragraph.html.twig" %}
+{% block wrapper %}
+  {{ content }}
+{% endblock wrapper %}

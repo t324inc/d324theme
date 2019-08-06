@@ -1,21 +1,47 @@
-{%
-  set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  'paragraph--id--' ~ paragraph.id(),
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished',
-]
-%}
+{% extends "paragraph.html.twig" %}
 {% block paragraph %}
-    {% include '@d324theme/simple_block/simple_block.twig' with {
-      heading: paragraph.field_heading.value,
-      sub_heading: paragraph.field_sub_heading.value,
-      pre_heading: paragraph.field_pre_heading.value,
-      media: content.field_media,
-      text_content: content.field_text_content,
-      buttons: paragraph.field_call_to_action_buttons,
-      alignment: paragraph.field_direction.value,
-      classes: classes
-    } %}
+  {% set image_attributes = create_attribute() %}
+  {% set image_classes = [
+    'simple-block-image',
+    paragraph.field_direction.value == 'left' ? 'image-align-right float-left col-4 mt-2 mr-5 mb-3 p-0',
+    paragraph.field_direction.value == 'right' ? 'image-align-left float-right col-4 mt-2 ml-5 mb-3 p-0',
+    paragraph.field_direction.value == 'above' ? 'image-align-above w-100 mb-5',
+    paragraph.field_direction.value == 'below' ? 'image-align-below w-100 mt-5',
+  ] %}
+  <div {{ attributes.addClass(classes) }}>
+    {% if content.field_media|render|trim is not empty and paragraph.field_direction.value != 'below' %}
+      <div{{ image_attributes.addClass(image_classes) }}>
+        {{ content.field_media }}
+      </div>
+    {% endif %}
+    {% if paragraph.field_pre_heading.value %}
+      <h6><small>{{ paragraph.field_pre_heading.value }}</small></h6>
+    {% endif %}
+    {% if paragraph.field_heading.value %}
+      <h2>{{ paragraph.field_heading.value }}</h2>
+    {% endif %}
+    {% if paragraph.field_sub_heading.value %}
+      <h4><em>{{ paragraph.field_sub_heading.value }}</em></h4>
+    {% endif %}
+    {% if content.field_text_content or paragraph.field_call_to_action_buttons %}
+      {% if content.field_text_content %}
+        {{ content.field_text_content }}
+      {% endif %}
+      {% if paragraph.field_call_to_action_buttons %}
+        <div class="mt-4 simple-block__buttons">
+          {%- for button in paragraph.field_call_to_action_buttons -%}
+            {% set button_attributes = create_attribute() %}
+            {% set button_attributes = button_attributes.addClass('btn btn-primary') %}
+            {{ link(button.title, button.uri, button_attributes) }}
+          {%- endfor -%}
+        </div>
+      {% endif %}
+    {% endif %}
+    {% if content.field_media|render|trim is not empty and paragraph.field_direction.value == 'below' %}
+      <div{{ image_attributes.addClass(image_classes) }}>
+        {{ content.field_media }}
+      </div>
+    {% endif %}
+  </div>
 {% endblock paragraph %}
+

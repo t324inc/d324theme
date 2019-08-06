@@ -19,3 +19,9 @@
 body {
   overflow-x: hidden; // stupidly still needed since 100vw ignores scrollbars
 }
+
+// Off Canvas Sidebar
+
+.ui-dialog.ui-dialog-off-canvas {
+  z-index: 1021;
+}

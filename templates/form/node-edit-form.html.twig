@@ -14,21 +14,45 @@
  *
 #}
 <div class="layout-node-form clearfix">
-  <ul class="node-form-nav nav nav-pills py-2 align-right" id="node-edit-pills-tabs" role="tablist">
+  <ul class="node-form-nav nav nav-pills p-2 mb-4 justify-content-start" id="node-edit-pills-tabs" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="pills-node-edit-main-tab" data-toggle="pill" href="#node-edit-main" role="tab" aria-controls="node-edit-main" aria-selected="true">Page Content</a>
     </li>
+    {% if form.urls %}
+      <li class="nav-item">
+        <a class="nav-link" id="pills-node-edit-urls-tab" data-toggle="pill" href="#node-edit-urls" role="tab" aria-controls="node-edit-urls" aria-selected="false">URLs/Menu</a>
+      </li>
+    {% endif %}
+    {% if form.seo %}
+      <li class="nav-item">
+        <a class="nav-link" id="pills-node-edit-seo-tab" data-toggle="pill" href="#node-edit-seo" role="tab" aria-controls="node-edit-seo" aria-selected="false">SEO/Metatags</a>
+      </li>
+    {% endif %}
+    {% if form.advanced %}
     <li class="nav-item">
       <a class="nav-link" id="pills-node-edit-secondary-tab" data-toggle="pill" href="#node-edit-secondary" role="tab" aria-controls="node-edit-secondary" aria-selected="false">Page Settings</a>
     </li>
+    {% endif %}
   </ul>
   <div class="tab-content" id="pills-tabContent">
     <div class="layout-region layout-region-node-main tab-pane fade show active" id="node-edit-main" role="tabpanel" aria-labelledby="node-edit-main-tab">
-      {{ form|without('advanced', 'footer', 'actions') }}
+      {{ form|without('urls','seo','advanced','footer','actions') }}
     </div>
+    {% if form.urls %}
+      <div class="layout-region layout-region-node-urls tab-pane fade" id="node-edit-urls" role="tabpanel" aria-labelledby="node-edit-urls-tab">
+        {{ form.urls }}
+      </div>
+    {% endif %}
+    {% if form.seo %}
+      <div class="layout-region layout-region-node-seo tab-pane fade" id="node-edit-seo" role="tabpanel" aria-labelledby="node-edit-seo-tab">
+        {{ form.seo }}
+      </div>
+    {% endif %}
+    {% if form.advanced %}
     <div class="layout-region layout-region-node-secondary tab-pane fade" id="node-edit-secondary" role="tabpanel" aria-labelledby="node-edit-secondary-tab">
       {{ form.advanced }}
     </div>
+    {% endif %}
   </div>
   <div class="layout-region layout-region-node-footer">
     <div class="layout-region-node-footer__content">

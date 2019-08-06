@@ -26,17 +26,16 @@
     {% endif %}
 
     {% if display_submitted %}
-      <footer>
+      <section>
         {{ author_picture }}
         <div{{ author_attributes }}>
           {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
           {{ metadata }}
         </div>
-      </footer>
+      </section>
     {% endif %}
 
-    <div{{ content_attributes }}>
-      {{ content }}
-    </div>
+    {{ content }}
+
   {% endblock %}
 </article>

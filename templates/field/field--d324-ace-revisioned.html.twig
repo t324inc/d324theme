@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Default template for a field.
+ */
+#}
+{%
+  set classes = [
+  bundle|clean_class ~ '__' ~ field_name_clean|clean_class,
+  'field--name-' ~ field_name|clean_class,
+  'field--type-' ~ field_type|clean_class
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+{% for item in items %}
+  {{ item.content }}
+{% endfor %}
+</div>

@@ -2,6 +2,7 @@
   position: relative;
   min-height: 25rem;
   text-align: center;
+  background: none;
 
   .card-img {
     position: absolute;
@@ -39,7 +40,7 @@
   &:first-child {
     margin-left: 0;
   }
-  
+
   &:last-child {
     margin-right: 0;
   }

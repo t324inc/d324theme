@@ -38,18 +38,39 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
-  ]
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle()|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  paragraph.published is not same as(true) ? 'paragraph--unpublished',
+  'paragraph-id--' ~ paragraph.id(),
+]
 %}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+{% set wrapper_classes = [
+  'paragraph-wrapper',
+  'paragraph-wrapper--' ~ paragraph.bundle()|clean_class,
+  'paragraph-wrapper-id--' ~ paragraph.id(),
+] %}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{% set paragraph_content %}
+  {% block paragraph %}
+  <div{{ attributes }}>
+    {{ content }}
   </div>
-{% endblock paragraph %}
+  {% endblock paragraph %}
+{% endset %}
+
+{% block wrapper %}
+{% if wrapper_attributes or background %}
+<div{{ wrapper_attributes.addClass(wrapper_classes) }}>
+  {% if background %}
+    {{ background }}
+  {% endif %}
+{% endif %}
+  {{ paragraph_content }}
+{% if wrapper_attributes or background %}
+</div>
+{% endif %}
+{% endblock wrapper %}
