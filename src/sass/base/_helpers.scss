@@ -120,3 +120,55 @@
 body .hidden {
   display: none;
 }
+
+// Absolute positioning
+
+.absolute-top {
+  position: absolute;
+  top: 0;
+}
+
+.absolute-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+// Image hover effects
+
+.zoom-wrap {
+  overflow: hidden;
+
+  img {
+    transition: $transition-base !important;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.lighten-wrap {
+  background: #000;
+
+  img {
+    transition: $transition-base !important;
+    opacity: .8;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
+}
+
+.darken-wrap {
+  background: #000;
+
+  img {
+    transition: $transition-base !important;
+    opacity: 1;
+  }
+
+  &:hover img {
+    opacity: .8;
+  }
+}

@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Template for a Media component.
+ *
+ * Available config:
+ * - media: contextual media links
+ * - media_classes: array of additional classes for media
+ * - link: link field
+ * - caption: caption content
+ * - caption_style: above|below|top|bottom
+ * - hover_effects: an optional array containing zoom|lighten|darken
+ */
+#}
+{% if hover_effects|length %}
+  {% set hover_attributes = create_attribute() %}
+  {% for effect in hover_effects %}
+    {% set hover_attributes = hover_attributes.addClass(effect ~ '-wrap') %}
+  {% endfor %}
+{% endif %}
+{% set figure_attributes = create_attribute() %}
+{% set figure_attributes = figure_attributes.addClass([
+  'figure',
+  'm-0',
+  'd-block',
+]) %}
+{% set figcaption %}
+  {% if caption|render|trim is not empty %}
+    {% set caption_attributes = create_attribute() %}
+    {% set caption_classes = [
+      'figure-caption',
+      'bg-light',
+      'px-2',
+      'py-1',
+      caption_style == 'top' ? 'absolute-top m-3',
+      caption_style == 'bottom' ? 'absolute-bottom m-3',
+    ] %}
+    <figcaption{{ caption_attributes.addClass(caption_classes) }}>
+      {% autoescape false %}
+        {{ caption }}
+      {% endautoescape %}
+    </figcaption>
+  {% endif %}
+{% endset %}
+<figure{{ figure_attributes.addClass(media_classes) }}>
+  {% if caption_style == 'above' %}{{ figcaption }}{% endif %}
+  {% if link|length %}<a href="{{ link.0.getUrl() }}">{% endif %}
+  {% if hover_attributes %}<div{{ hover_attributes }}>{% endif %}
+  {{ media }}
+  {% if hover_attributes %}</div>{% endif %}
+  {% if link|length %}</a>{% endif %}
+  {% if caption_style is not same as('above') %}{{ figcaption }}{% endif %}
+</figure>

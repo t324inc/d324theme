@@ -1,0 +1,11 @@
+{% extends "paragraph.html.twig" %}
+{% block paragraph %}
+  {%
+    set classes = classes|merge([paragraph.field_spacing_size ? 'py-' ~ paragraph.field_spacing_size.value : ''])
+  %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if paragraph.field_include_horizontal_divider.value %}
+      <hr>
+    {% endif %}
+  </div>
+{% endblock paragraph %}

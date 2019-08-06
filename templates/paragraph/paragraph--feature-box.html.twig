@@ -1,0 +1,38 @@
+{% extends "paragraph.html.twig" %}
+{% block paragraph %}
+  {% set classes = classes|merge([
+    'feature-box',
+    'row',
+    'bg-white',
+    'shadow',
+    'no-gutters',
+    paragraph.field_direction.value == 'left' ? 'flex-md-row' : 'flex-md-row-reverse',
+  ]) %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="col-md-6 feature-box--media">
+        {% include '@d324theme/media/media.twig' with {
+          media: content.field_featured_media,
+          link: paragraph.field_main_link,
+          caption: paragraph.field_featured_media.entity.field_caption_text.value,
+          caption_style: 'bottom',
+          hover_effects: ['zoom', 'lighten'],
+        } %}
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-center feature-box--description p-5">
+      {% if content.field_heading %}
+        <h2>{{ content.field_heading }}</h2>
+      {% endif %}
+      {{ content.field_description }}
+      {% if paragraph.field_call_to_action_buttons %}
+        {% set button_direction = paragraph.field_direction.value == 'left' ? 'text-align-left' : 'text-align-right' %}
+        <div class="feature-box-ctas mt-3 {{ button_direction }}">
+          {%- for item in paragraph.field_call_to_action_buttons -%}
+            {% set link_attributes = create_attribute() %}
+            {% set link_attributes = link_attributes.addClass('btn btn-primary') %}
+            {{ link(item.title, item.uri, link_attributes) }}
+          {%- endfor -%}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock paragraph %}
