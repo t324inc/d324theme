@@ -1,0 +1,29 @@
+<div class="carousel-item d-block text-white">
+  {% include '@d324theme/media/media.twig' with {
+    media: content.field_slide_media,
+  } %}
+  {% if content.field_slide_heading or content.field_slide_links or content.field_slide_media  %}
+  <div class="carousel-caption">
+    <div class="carousel-caption-content d-none d-md-block">
+      {% if content.field_slide_heading %}
+        <h3 class="display-3 text-white text-shadow">{{ content.field_slide_heading|render|striptags|trim }}</h3>
+      {% endif %}
+      {% if content.field_slide_description %}
+        <div class="text-shadow-sm">
+          {{ content.field_slide_description }}
+        </div>
+      {% endif %}
+    </div>
+    {% if paragraph.field_slide_links %}
+      <div class="calls-to-action d-inline-flex mt-5">
+        {% include '@d324theme/button/link_button.twig' with {
+          links: paragraph.field_slide_links,
+          type: 'primary',
+          size: 'lg',
+          shadow: 'shadow-xl',
+        } %}
+      </div>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>

@@ -10,14 +10,19 @@
 
 // Breakout Containers
 // -----------------------------------------------------------------------------
+
 .breakout-container {
+  position: relative;
   left: calc(-1 * (100vw - 100%) / 2);
   width: 100vw;
-  position: relative;
 }
 
 body {
-  overflow-x: hidden; // stupidly still needed since 100vw ignores scrollbars
+  overflow-x: hidden;
+
+  &.breakout-fixed {
+    overflow-x: auto;
+  }
 }
 
 // Off Canvas Sidebar

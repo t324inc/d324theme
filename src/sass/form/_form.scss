@@ -64,37 +64,40 @@ form .form-wrapper {
   display: none;
 }
 
-.field--type-link .field-multiple-table .field-multiple-drag {
+.field--type-link .field-multiple-table {
 
-  td {
-    border: none;
+  tr:first-child .field-multiple-drag + td {
+    border-top: 0;
   }
 
-  + td {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+  .field-multiple-drag {
 
-    > * {
-      margin: 1rem 1rem 1rem 0 !important;
-      max-width: 300px;
-      padding-top: 0;
+    td {
+      border: none;
     }
 
-    > .form-wrapper.card {
-      border: none;
-      display: block;
-      background: none;
-      margin-left: 1rem !important;
-      flex-grow: 1;
+    + td {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
 
-      &[open] {
-        height: auto;
+      > * {
+        margin: 1rem 1rem 1rem 0 !important;
+        max-width: 300px;
+        padding-top: 0;
+      }
+
+      > .form-wrapper.card {
+        border: none;
+        display: block;
+        background: none;
+        margin-left: 1rem !important;
+        flex-grow: 1;
+
+        &[open] {
+          height: auto;
+        }
       }
     }
-  }
-
-  tr:first-child .field-multiple-drag+td {
-    border-top: 0;
   }
 }

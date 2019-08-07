@@ -3,21 +3,28 @@
   {% set extra_classes = [
     'jumbotron',
     'd-flex',
+    'flex-column',
+    'justify-content-center',
     'align-items-center',
     'text-white',
     'px-0',
   ] %}
   <div{{ attributes.addClass(extra_classes) }}>
     {% if content.field_hero_text %}
-      <h1 class="text-white mx-lg-6 mx-md-4">{{ content.field_hero_text }}</h1>
+      <h1 class="text-white mx-lg-10 mx-md-8">{{ content.field_hero_text }}</h1>
+    {% endif %}
+    {% if content.field_text_content %}
+      <div class="lead font-weight-normal">
+        {{ content.field_text_content }}
+      </div>
     {% endif %}
     {% if paragraph.field_calls_to_actions %}
-      <div class="calls-to-action row justify-content-center">
-        {%- for item in paragraph.field_calls_to_actions -%}
-          {% set link_attributes = create_attribute() %}
-          {% set link_attributes = link_attributes.addClass('btn btn-primary shadow') %}
-          {{ link(item.title, item.uri, link_attributes) }}
-        {%- endfor -%}
+      <div class="calls-to-action row justify-content-center mt-3">
+        {% include '@d324theme/button/link_button.twig' with {
+          links: paragraph.field_calls_to_actions,
+          type: 'primary',
+          size: 'lg',
+        } %}
       </div>
     {% endif %}
   </div>

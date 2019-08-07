@@ -30,27 +30,3 @@
   }
 
 }
-
-.calls-to-action a, .feature-box-ctas a {
-  margin: 0 .5rem 1rem;
-  padding: 1.25rem 3rem;
-  font-size: 1rem;
-  border: none;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .calls-to-action a, .feature-box-ctas a {
-    padding: 1rem;
-  }
-  .feature-box .feature-box-ctas {
-    margin-bottom: 0;
-  }
-}

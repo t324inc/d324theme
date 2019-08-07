@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Template for a button component.
+ * One of the following is required:
+ * - links: link field
+ * - url: url string
+ * Available config:
+ * - text: string (optional if link field has title)
+ * - type: primary | secondary | success | danger | warning | info | light | dark
+ * - outline: true | false
+ * - size: sm|lg
+ * - shadow: shadow|shadow-lg|shadow-sm
+ * - link_attributes: Attributes array
+ */
+#}
+{% set link_classes = [
+  'btn',
+  type ? outline ? 'btn-outline-' ~ type : 'btn-' ~ type,
+  size ? 'btn-' ~ size,
+  shadow ? shadow,
+] %}
+{% set link_attributes = link_attributes ? link_attributes.addClass(link_classes) : create_attribute().addClass(link_classes) %}
+{% if links|length %}
+  {% for link in links %}
+    {% if link.options['attributes']|length %}
+      {% set link_attributes = link_attributes|merge(link.options['attributes']) %}
+    {% endif %}
+    {% if link.title %}
+      {% set text = link.title %}
+    {% endif %}
+    {{ link(text, link.uri, link_attributes) }}
+  {% endfor %}
+{% elseif url %}
+  {{ link(text, url, link_attributes) }}
+{% endif %}
+
+

@@ -5,7 +5,6 @@
  *
  * Available config:
  * - type: primary | secondary | success | danger | warning | info | light | dark
- * - outline: true | false
  * - tag: button, a, input
  * - value: string
  * - attributes: Attributes array.
@@ -18,7 +17,7 @@
 {% if tag == 'input' %}
   <input{{ attributes.addClass(css_classes) }} />
 {% else %}
-  <{{ tag }}{{ attributes }}>{{ value }}</{{ tag }}>
+  <{{ tag }}{{ attributes.addClass(css_classes) }}>{{ value }}</{{ tag }}>
 {% endif %}
 
 

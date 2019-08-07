@@ -4,7 +4,7 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    // Responsive Shadows
+    // Responsive Box Shadows
     .shadow#{$infix}-md {
       box-shadow: $box-shadow !important;
     }
@@ -14,8 +14,28 @@
     .shadow#{$infix}-lg {
       box-shadow: $box-shadow-lg !important;
     }
+    .shadow#{$infix}-xl {
+      box-shadow: $box-shadow-xl !important;
+    }
     .shadow#{$infix}-none {
       box-shadow: none !important;
+    }
+
+    // Responsive Text Shadows
+    .text-shadow#{$infix}-md, .text-shadow {
+      text-shadow: $text-shadow !important;
+    }
+    .text-shadow#{$infix}-sm {
+      text-shadow: $text-shadow-sm !important;
+    }
+    .text-shadow#{$infix}-lg {
+      text-shadow: $text-shadow-lg !important;
+    }
+    .text-shadow#{$infix}-xl {
+      text-shadow: $text-shadow-xl !important;
+    }
+    .text-shadow#{$infix}-none {
+      text-shadow: none !important;
     }
 
     // Responsive positioning
@@ -138,37 +158,43 @@ body .hidden {
 .zoom-wrap {
   overflow: hidden;
 
-  img {
+  img, iframe, video {
     transition: $transition-base !important;
   }
 
-  &:hover img {
-    transform: scale(1.05);
+  &:hover {
+    img, iframe, video {
+      transform: scale(1.05);
+    }
   }
 }
 
 .lighten-wrap {
   background: #000;
 
-  img {
+  img, iframe, video {
     transition: $transition-base !important;
     opacity: .8;
   }
 
-  &:hover img {
-    opacity: 1;
+  &:hover {
+    img, iframe, video {
+      opacity: 1;
+    }
   }
 }
 
 .darken-wrap {
   background: #000;
 
-  img {
+  img, iframe, video {
     transition: $transition-base !important;
-    opacity: 1;
+    opacity: .8;
   }
 
-  &:hover img {
-    opacity: .8;
+  &:hover {
+    img, iframe, video {
+      opacity: .8;
+    }
   }
 }

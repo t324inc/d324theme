@@ -1,0 +1,18 @@
+{% extends "paragraph.html.twig" %}
+{% block paragraph %}
+  {% set hover_effects = [] %}
+  {% if paragraph.field_hover_effects|length %}
+    {% for effect in paragraph.field_hover_effects %}
+      {% set hover_effects = hover_effects|merge([effect.value]) %}
+    {% endfor %}
+  {% endif %}
+  <div{{ attributes.addClass(classes) }}>
+    {% include '@d324theme/media/media.twig' with {
+      media: content.field_media,
+      link: paragraph.field_media_link,
+      caption: paragraph.field_media.entity.field_caption_text.value,
+      caption_style: paragraph.field_caption_position.value,
+      hover_effects: hover_effects,
+    } %}
+  </div>
+{% endblock paragraph %}

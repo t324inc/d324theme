@@ -44,10 +44,9 @@
 {% endset %}
 <figure{{ figure_attributes.addClass(media_classes) }}>
   {% if caption_style == 'above' %}{{ figcaption }}{% endif %}
-  {% if link|length %}<a href="{{ link.0.getUrl() }}">{% endif %}
   {% if hover_attributes %}<div{{ hover_attributes }}>{% endif %}
   {{ media }}
+  {% if link|length %}<a class="media-link-overlay" href="{{ link.0.getUrl() }}"></a>{% endif %}
   {% if hover_attributes %}</div>{% endif %}
-  {% if link|length %}</a>{% endif %}
   {% if caption_style is not same as('above') %}{{ figcaption }}{% endif %}
 </figure>

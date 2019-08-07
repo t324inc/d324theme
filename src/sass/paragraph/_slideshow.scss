@@ -1,0 +1,30 @@
+.carousel-item {
+
+  background: #000;
+
+  img, video, iframe {
+    opacity: .6;
+  }
+
+  .carousel-caption {
+    bottom: unset;
+    top: 50%;
+    transform: translateY(-50%);
+
+    h3 {
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .slide__description {
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+
+    .btn {
+      pointer-events: all;
+    }
+  }
+}
+
+

@@ -15,16 +15,16 @@ p:last-child {
 // LINKS
 // -----------------------------------------------------------------------------
 
-a {
+.btn {
+  margin: .25rem .5rem;
 
-  @include hover {
-
+  &:first-child {
+    margin-left: 0;
   }
-}
 
-.button, .image-button {
-  margin-left: 0;
-  margin-right: 0;
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .nav-pills .nav-link {
@@ -102,14 +102,6 @@ blockquote.blockquote {
       margin-left: .25rem;
     }
   }
-}
-
-strong {
-
-}
-
-small {
-
 }
 
 .media {
