@@ -11,6 +11,7 @@ style:
       assets/css/d324theme.style.css: {}
   js:
     assets/js/d324theme.script.js: {}
+    assets/js/d324theme.breakoutfix.js: {}
   dependencies:
     - core/jquery
     - core/drupal

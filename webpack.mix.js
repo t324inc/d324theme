@@ -85,7 +85,8 @@ mix.sass('src/sass/d324theme.bootstrap.scss', 'css')
  |--------------------------------------------------------------------------
  */
 
-mix.js('src/js/d324theme.script.js', 'js');
+mix.js('src/js/d324theme.script.js', 'js')
+  .js('src/js/d324theme.breakoutfix.js', 'js');
 
 /*
  |--------------------------------------------------------------------------
