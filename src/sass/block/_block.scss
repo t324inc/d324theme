@@ -1,31 +1,5 @@
 // Styles for blocks provided by core and contrib modules
 
-/** Header Image Block **/
-
-.header-image-block {
-  background: $dark;
-}
-
-.header-image-block img {
-  height: 400px;
-  max-height: 33vh;
-  min-height: 150px;
-  position: relative;
-  object-fit: cover;
-  object-position: center top;
-  width: 100%;
-  opacity: .4;
-}
-
-.page-title-container h1 {
-  position: absolute;
-  top: 50%;
-  margin-top: -20px;
-  font-size: 3.5rem;
-  color: #fff;
-  font-weight: bold;
-}
-
 /** Off Canvas Tray **/
 
 #drupal-off-canvas .media-library-widget-modal .media-library-item--grid,

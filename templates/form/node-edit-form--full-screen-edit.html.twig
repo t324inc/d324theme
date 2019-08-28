@@ -13,11 +13,22 @@
  * - form: The node add/edit form.
  *
 #}
+
 <div class="layout-node-form clearfix">
   <ul class="node-form-nav nav nav-pills p-2 mb-4 justify-content-start" id="node-edit-pills-tabs" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="pills-node-edit-main-tab" data-toggle="pill" href="#node-edit-main" role="tab" aria-controls="node-edit-main" aria-selected="true">Page Content</a>
     </li>
+    {% if form.group_header %}
+      <li class="nav-item">
+        <a class="nav-link" id="pills-node-edit-header-tab" data-toggle="pill" href="#node-edit-header" role="tab" aria-controls="node-edit-header" aria-selected="false">Header</a>
+      </li>
+    {% endif %}
+    {% if form.group_categories_tags %}
+      <li class="nav-item">
+        <a class="nav-link" id="pills-node-edit-categories-tags-tab" data-toggle="pill" href="#node-edit-categories-tags" role="tab" aria-controls="node-edit-categories-tags" aria-selected="false">Categories / Tags</a>
+      </li>
+    {% endif %}
     {% if form.urls %}
       <li class="nav-item">
         <a class="nav-link" id="pills-node-edit-urls-tab" data-toggle="pill" href="#node-edit-urls" role="tab" aria-controls="node-edit-urls" aria-selected="false">URLs/Menu</a>
@@ -36,8 +47,18 @@
   </ul>
   <div class="tab-content" id="pills-tabContent">
     <div class="layout-region layout-region-node-main tab-pane fade show active" id="node-edit-main" role="tabpanel" aria-labelledby="node-edit-main-tab">
-      {{ form|without('urls','seo','advanced','footer','actions') }}
+      {{ form|without('group_header','group_categories_tags','urls','seo','advanced','footer','actions') }}
     </div>
+    {% if form.group_header %}
+      <div class="layout-region layout-region-node-header tab-pane fade" id="node-edit-header" role="tabpanel" aria-labelledby="node-edit-header-tab">
+        {{ form.group_header }}
+      </div>
+    {% endif %}
+    {% if form.group_categories_tags %}
+      <div class="layout-region layout-region-node-categories-tags tab-pane fade" id="node-edit-categories-tags" role="tabpanel" aria-labelledby="node-edit-categories-tags-tab">
+        {{ form.group_categories_tags }}
+      </div>
+    {% endif %}
     {% if form.urls %}
       <div class="layout-region layout-region-node-urls tab-pane fade" id="node-edit-urls" role="tabpanel" aria-labelledby="node-edit-urls-tab">
         {{ form.urls }}

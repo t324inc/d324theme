@@ -9,14 +9,27 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function d324theme_theme_suggestions_node_edit_form_alter(array &$suggestions, array $variables) {
+  foreach($variables['form'] as $form_item) {
+    if(is_array($form_item) && !empty($form_item['widget']['entities']['#attached']['library'])) {
+      if (in_array('d324_ace/full_screen_editing', $form_item['widget']['entities']['#attached']['library'])) {
+        $suggestions[] = $variables['theme_hook_original'] . '__' . 'full_screen_edit';
+        $suggestions[] = $variables['theme_hook_original'] . '__' . $variables['form']['#form_id'] . '__' . 'full_screen_edit';
+      }
+    }
+  }
+}
+
 function d324theme_theme_suggestions_form_alter(array &$suggestions, array &$variables) {
   $element = $variables['element'];
-
   // Add a suggestion based on the form id name.
   if (isset($element['#form_id'])) {
     $suggestions[] = $variables['theme_hook_original'] . '__' . $element['#form_id'];
   }
-
 }
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -84,35 +97,54 @@ function d324theme_form_search_block_form_alter(&$form, FormStateInterface $form
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
-function d324theme_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if(isset($form['meta'])) {
-    $form['meta']['#type'] = 'details';
-    $form['meta']['#title'] = 'Publishing Details';
-  }
-  if(isset($form['path']) || isset($form['menu'])) {
-    $form['urls'] = [
-      '#type' => 'container',
-    ];
-    if(isset($form['path'])) {
-      $form['path']['#group'] = 'urls';
-      $form['path']['widget'][0]['#group'] = 'urls';
-    }
-    if(isset($form['menu'])) {
-      $form['menu']['#group'] = 'urls';
-      $form['menu']['#open'] = TRUE;
-    }
-  }
-  if(isset($form['field_yoast_seo']) || isset($form['field_meta_tags'])) {
-    $form['seo'] = [
-      '#type' => 'container',
-    ];
-    if(isset($form['field_yoast_seo'])) {
-      $form['field_yoast_seo']['#group'] = 'seo';
-    }
-    if(isset($form['field_meta_tags'])) {
-      $form['field_meta_tags']['widget'][0]['#group'] = 'seo';
-      $form['field_meta_tags']['widget'][0]['#open'] = TRUE;
-      $form['field_meta_tags']['widget'][0]['#weight'] = 99;
+function d324theme_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  foreach($form as $key => $form_item) {
+    if(is_array($form_item) && !empty($form_item['widget']['entities']['#attached']['library'])) {
+      if(in_array('d324_ace/full_screen_editing', $form[$key]['widget']['entities']['#attached']['library'])) {
+        $form['#uses_full_screen'] = TRUE;
+        if(isset($form['group_header'])) {
+          $form['group_header'] = [
+            '#type' => 'container',
+            '#title' => 'Header',
+          ];
+        }
+        if(isset($form['group_categories_tags'])) {
+          $form['group_categories_tags'] = [
+            '#type' => 'container',
+            '#title' => 'Categories / Tags',
+          ];
+        }
+        if(isset($form['meta'])) {
+          $form['meta']['#type'] = 'details';
+          $form['meta']['#title'] = 'Publishing Details';
+        }
+        if(isset($form['path']) || isset($form['menu'])) {
+          $form['urls'] = [
+            '#type' => 'container',
+          ];
+          if(isset($form['path'])) {
+            $form['path']['#group'] = 'urls';
+            $form['path']['widget'][0]['#group'] = 'urls';
+          }
+          if(isset($form['menu'])) {
+            $form['menu']['#group'] = 'urls';
+            $form['menu']['#open'] = TRUE;
+          }
+        }
+        if(isset($form['field_yoast_seo']) || isset($form['field_meta_tags'])) {
+          $form['seo'] = [
+            '#type' => 'container',
+          ];
+          if(isset($form['field_yoast_seo'])) {
+            $form['field_yoast_seo']['#group'] = 'seo';
+          }
+          if(isset($form['field_meta_tags'])) {
+            $form['field_meta_tags']['widget'][0]['#group'] = 'seo';
+            $form['field_meta_tags']['widget'][0]['#open'] = TRUE;
+            $form['field_meta_tags']['widget'][0]['#weight'] = 99;
+          }
+        }
+      }
     }
   }
 }

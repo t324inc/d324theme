@@ -1,0 +1,5 @@
+{% extends "paragraph.html.twig" %}
+{% set attributes = attributes.addClass('card-deck').addClass(classes) %}
+{% block paragraph %}
+  {{ content.field_cards }}
+{% endblock paragraph %}

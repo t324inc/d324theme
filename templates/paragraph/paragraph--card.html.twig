@@ -1,0 +1,35 @@
+{% extends "paragraph.html.twig" %}
+{% set attributes = attributes.addClass('card').addClass(classes) %}
+{% block paragraph %}
+  {% block card_media %}
+  {% if content.field_media|render|striptags('img video picture') %}
+    {% include '@d324theme/media/media.twig' with {
+      media: content.field_media,
+      media_classes: ['card-img-top'],
+      hover_effects: ['zoom', 'lighten'],
+    } %}
+  {% endif %}
+  {% endblock %}
+  {% block card_body %}
+  <div class="card-body">
+    {% if content.field_formatted_heading %}
+      <h5 class="card-title">{{ content.field_formatted_heading}}</h5>
+    {% endif %}
+    {% if content.field_text_content %}
+      <div class="card-text">
+        {{ content.field_text_content }}
+      </div>
+    {% endif %}
+  </div>
+  {% endblock %}
+  {% block card_footer %}
+  {% if content.field_main_link|render|trim is not empty %}
+    <div class="card-footer calls-to-action">
+      {% include '@d324theme/button/link_button.twig' with {
+        links: paragraph.field_main_link,
+        type: 'primary',
+      } %}
+    </div>
+  {% endif %}
+  {% endblock %}
+{% endblock paragraph %}

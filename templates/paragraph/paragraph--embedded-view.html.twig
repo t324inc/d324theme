@@ -1,17 +1,15 @@
 {% extends "paragraph.html.twig" %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% if paragraph.field_pre_heading.value %}
-      <h6><small>{{ paragraph.field_pre_heading.value|render|striptags }}</small></h6>
-    {% endif %}
-    {% if paragraph.field_heading.value %}
-      <h2>{{ paragraph.field_heading.value|render|striptags }}</h2>
-    {% endif %}
-    {% if paragraph.field_sub_heading.value %}
-      <h4><em>{{ paragraph.field_sub_heading.value|render|striptags }}</em></h4>
-    {% endif %}
-    {% if content.field_embedded_view %}
-      {{ content.field_embedded_view }}
-    {% endif %}
-  </div>
+  {% if paragraph.field_pre_heading.value %}
+    <h6><small>{{ paragraph.field_pre_heading.value|render|striptags }}</small></h6>
+  {% endif %}
+  {% if paragraph.field_heading.value %}
+    <h2>{{ paragraph.field_heading.value|render|striptags }}</h2>
+  {% endif %}
+  {% if paragraph.field_sub_heading.value %}
+    <h4><em>{{ paragraph.field_sub_heading.value|render|striptags }}</em></h4>
+  {% endif %}
+  {% if content.field_embedded_view %}
+    {{ content.field_embedded_view }}
+  {% endif %}
 {% endblock paragraph %}

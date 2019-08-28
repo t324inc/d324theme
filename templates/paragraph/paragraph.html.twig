@@ -53,24 +53,36 @@
 ] %}
 
 {% set attributes = attributes.addClass(classes) %}
+{% if wrapper_attributes or background %}
+  {% set attributes = attributes.removeAttribute('data-ace-paragraph-id').removeClass('d324-ace-frontend-paragraph-wrapper') %}
+  {% set wrapper_attributes = wrapper_attributes.setAttribute('data-ace-paragraph-id', paragraph.id()).addClass('d324-ace-frontend-paragraph-wrapper') %}
+  {% if wrapper_attributes and background %}
+    {% set attributes = attributes.removeClass('paragraph-background-wrapper') %}
+    {% set wrapper_attributes = wrapper_attributes.addClass('paragraph-background-wrapper') %}
+  {% endif %}
+{% endif %}
 
 {% set paragraph_content %}
-  {% block paragraph %}
   <div{{ attributes }}>
-    {{ content }}
+    {% if not wrapper_attributes and not background %}{{ top_links }}{% endif %}
+    {% block paragraph %}
+      {{ content }}
+    {% endblock paragraph %}
+    {% if not wrapper_attributes and not background %}{{ bottom_links }}{% endif %}
   </div>
-  {% endblock paragraph %}
 {% endset %}
 
 {% block wrapper %}
-{% if wrapper_attributes or background %}
-<div{{ wrapper_attributes.addClass(wrapper_classes) }}>
-  {% if background %}
-    {{ background }}
+  {% if wrapper_attributes or background %}
+    <div{{ wrapper_attributes.addClass(wrapper_classes) }}>
+    {{ top_links }}
+    {% if background %}
+      {{ background }}
+    {% endif %}
   {% endif %}
-{% endif %}
   {{ paragraph_content }}
-{% if wrapper_attributes or background %}
-</div>
-{% endif %}
+  {% if wrapper_attributes or background %}
+    {{ bottom_links }}
+    </div>
+  {% endif %}
 {% endblock wrapper %}

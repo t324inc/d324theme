@@ -15,6 +15,12 @@
   position: relative;
   left: calc(-1 * (100vw - 100%) / 2);
   width: 100vw;
+  overflow: hidden;
+
+  > .paragraph {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 body {
