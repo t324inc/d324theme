@@ -170,30 +170,30 @@ body .hidden {
 }
 
 .lighten-wrap {
-  background: #000;
+  background: $dark;
 
-  img, iframe, video {
+  img:not(.paragraph-background-container img), iframe, video, .paragraph-background-container {
     transition: $transition-base !important;
     opacity: .8;
   }
 
   &:hover {
-    img, iframe, video {
+    img:not(.paragraph-background-container img), iframe, video, .paragraph-background-container {
       opacity: 1;
     }
   }
 }
 
 .darken-wrap {
-  background: #000;
+  background: $dark;
 
-  img, iframe, video {
+  img:not(.paragraph-background-container img), iframe, video, .paragraph-background-container {
     transition: $transition-base !important;
-    opacity: .8;
+    opacity: 1;
   }
 
   &:hover {
-    img, iframe, video {
+    img:not(.paragraph-background-container img), iframe, video, .paragraph-background-container {
       opacity: .8;
     }
   }

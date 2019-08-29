@@ -7,6 +7,7 @@
  * - media: contextual media links
  * - media_classes: array of additional classes for media
  * - link: link field
+ * - url: url string
  * - caption: caption content
  * - caption_style: above|below|top|bottom
  * - hover_effects: an optional array containing zoom|lighten|darken
@@ -46,7 +47,11 @@
   {% if caption_style == 'above' %}{{ figcaption }}{% endif %}
   {% if hover_attributes %}<div{{ hover_attributes }}>{% endif %}
   {{ media }}
-  {% if link|length %}<a class="media-link-overlay" href="{{ link.0.getUrl() }}"></a>{% endif %}
+  {% if link|length %}
+    <a class="media-link-overlay" href="{{ link.0.getUrl() }}"></a>
+  {% elseif url %}
+    <a class="media-link-overlay" href="{{ url }}"></a>
+  {% endif %}
   {% if hover_attributes %}</div>{% endif %}
   {% if caption_style is not same as('above') %}{{ figcaption }}{% endif %}
 </figure>

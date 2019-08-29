@@ -1,33 +1,30 @@
 {% extends "paragraph.html.twig" %}
+{% set attributes = attributes.addClass([
+  'jumbotron',
+  'd-flex',
+  'flex-column',
+  'justify-content-center',
+  'align-items-center',
+  'text-white',
+  'px-0',
+]).addClass(classes) %}
 {% block paragraph %}
-  {% set extra_classes = [
-    'jumbotron',
-    'd-flex',
-    'flex-column',
-    'justify-content-center',
-    'align-items-center',
-    'text-white',
-    'px-0',
-  ] %}
-  <div{{ attributes.addClass(extra_classes) }}>
-    {% if content.field_hero_text %}
-      <h1 class="text-white mx-lg-10 mx-md-8">{{ content.field_hero_text }}</h1>
-    {% endif %}
-    {% if content.field_text_content %}
-      <div class="lead font-weight-normal">
-        {{ content.field_text_content }}
-      </div>
-    {% endif %}
-    {% if paragraph.field_calls_to_actions %}
-      <div class="calls-to-action row justify-content-center mt-3">
-        {% include '@d324theme/button/link_button.twig' with {
-          links: paragraph.field_calls_to_actions,
-          type: 'primary',
-          size: 'lg',
-        } %}
-      </div>
-    {% endif %}
-  </div>
+  {% if content.field_hero_text %}
+    <h1 class="text-white mx-lg-10 mx-md-8">{{ content.field_hero_text }}</h1>
+  {% endif %}
+  {% if content.field_text_content %}
+    <div class="lead font-weight-normal">
+      {{ content.field_text_content }}
+    </div>
+  {% endif %}
+  {% if paragraph.field_calls_to_actions %}
+    <div class="calls-to-action row justify-content-center mt-3">
+      {% include '@d324theme/button/link_button.twig' with {
+        links: paragraph.field_calls_to_actions,
+        type: 'primary',
+        size: 'lg',
+      } %}
+    </div>
+  {% endif %}
   {{ attach_library('blazy/load') }}
 {% endblock paragraph %}
-
